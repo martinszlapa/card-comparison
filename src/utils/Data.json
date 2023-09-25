@@ -1,0 +1,42 @@
+{
+    "cards" : [
+        {
+            "institution": "BMO",
+            "longName": "BMO Student Cashback Mastercard",
+            "type": "Mastercard",
+            "annualFee": 5,
+            "interestRate": 0.2099,
+            "groceryCashback": 0.03,
+            "recurringCashback": 0.01,
+            "otherCashback": 0.005,
+            "groceryRewardCap": 500,
+            "recurringRewardCap": 500,
+            "transportationRewardCap": 0
+        },
+        {
+            "institution": "CIBC",
+            "longName": "CIBC Dividend Visa Card for Students",
+            "type": "Visa",
+            "annualFee": 5,
+            "interestRate": 0.1999,
+            "groceryCashback": 0.20,
+            "recurringCashback": 0.01,
+            "transportationCashback:": 0.50,
+            "otherCashback": 0.005,
+            "rewardCap": 7000
+        },
+        {
+            "institution": "RBC",
+            "longName": "RBC Cash Back Mastercard",
+            "type": "Mastercard",
+            "annualFee": 15,
+            "interestRate": 0.1999,
+            "groceryCashback": 0.01,
+            "recurringCashback": 0.01,
+            "transportationCashback": 0.07,
+            "otherCashback": 0.01,
+            "rewardCap": 2000
+        }
+
+    ]
+}
