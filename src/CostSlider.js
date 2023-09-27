@@ -1,6 +1,7 @@
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import React, {useState} from 'react'
+import styles from './slider.module.css';
 
 const CostSlider = ({onChange}) => {
 
@@ -26,7 +27,7 @@ const CostSlider = ({onChange}) => {
         onChange(value, 'other');
     }
     return (
-        <div>
+        <div className={styles.slider}>
             <label>Grocery</label>
             <Slider
                 value={grocerySliderValue}

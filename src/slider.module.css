@@ -1,0 +1,6 @@
+.slider {
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

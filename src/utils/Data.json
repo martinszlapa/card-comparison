@@ -1,41 +1,54 @@
 {
     "cards" : [
         {
+            "index": 1,
             "institution": "BMO",
             "longName": "BMO Student Cashback Mastercard",
             "type": "Mastercard",
-            "annualFee": 5,
+            "annualFee": 0,
             "interestRate": 0.2099,
             "groceryCashback": 0.03,
             "recurringCashback": 0.01,
             "otherCashback": 0.005,
+            "transportationCashback": 0.005,
             "groceryRewardCap": 500,
             "recurringRewardCap": 500,
-            "transportationRewardCap": 0
+            "transportationRewardCap": 0,
+            "image": "https://www.bmo.com/dist/images/personal/credit-cards/bmo-cashback-mastercard.png"
         },
         {
+            "index": 2,
             "institution": "CIBC",
             "longName": "CIBC Dividend Visa Card for Students",
             "type": "Visa",
-            "annualFee": 5,
-            "interestRate": 0.1999,
-            "groceryCashback": 0.20,
+            "annualFee": 0,
+            "interestRate": 0.2099,
+            "groceryCashback": 0.02,
             "recurringCashback": 0.01,
-            "transportationCashback:": 0.50,
+            "transportationCashback": 0.01,
             "otherCashback": 0.005,
-            "rewardCap": 7000
+            "rewardCapYearly": 80000,
+            "overallCapYearly": 20000,
+            "image": "https://www.cibc.com/content/dam/global-assets/card-art/credit-cards/dividend-cards/cibc-dividend-visa-card-for-students/cibc-dividend-visa-card-for-students-en.png/_jcr_content/renditions/cq5dam.thumbnail.319.319.png"
         },
         {
+            "index": 3,
             "institution": "RBC",
             "longName": "RBC Cash Back Mastercard",
             "type": "Mastercard",
-            "annualFee": 15,
-            "interestRate": 0.1999,
-            "groceryCashback": 0.01,
-            "recurringCashback": 0.01,
-            "transportationCashback": 0.07,
-            "otherCashback": 0.01,
-            "rewardCap": 2000
+            "annualFee": 0,
+            "interestRate": 0.2099,
+            "groceryCashbackMax": 0.02,
+            "groceryCashbackMin": 0.01,
+            "otherCashbackMin": 0.005,
+            "otherCashbackMax": 0.01,
+            "rewardCapYearly": 120,
+            "grocerySpendingCapYearly": 6000,
+            "groceryRewardCap": 120,
+            "nonGroceryCapYearly": 6000,
+            "nonGroceryEarningsCap": 30,
+            "image": "https://www.rbcroyalbank.com/credit-cards/app/assets/cards/mc1_cashbackmc_en_sm.png"
+
         }
 
     ]
