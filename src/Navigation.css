@@ -1,0 +1,24 @@
+/* Navigation.css */
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px 50px;
+    background-color: #001B2E; /* Button background color */
+    color: #fff; /* Button text color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #7db5db; /* Hover color */
+}
