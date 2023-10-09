@@ -44,7 +44,7 @@ const calculateRewards = (card, grocery, transportation, recurring, other, month
         finalRewards = groceryRewards + transportationRewards + recurringRewards + otherRewards;
     }
 
-    else if (card.institution === "CIBC"){
+    else if (card.institution === "CIBC" && card.longName === "CIBC Dividend Visa Card for Students"){
         let rewards = 0;
 
         let totalRewardEligible = 0;
@@ -61,6 +61,54 @@ const calculateRewards = (card, grocery, transportation, recurring, other, month
         }
 
         finalRewards = rewards;
+    }
+
+    else if (card.longName === "Scotiabank Momentum Visa Infinite Card"){
+
+        let totalCashback = 0;
+
+        for (let month = 1; month <= months; month++) {
+            // Calculate cashback for 4% category (Grocery and Recurring Bill Payments)
+            let cashback4Percent = 0;
+            if (grocery + recurring <= card.annualCap4Percent / 12) {
+                cashback4Percent = (grocery + recurring) * 0.04;
+            } else {
+                cashback4Percent = (card.annualCap4Percent / 12) * 0.04;
+            }
+
+            // Calculate cashback for 2% category (Gas and Daily Transit)
+            let cashback2Percent = 0;
+            if (transportation <= card.annualCap2Percent / 12) {
+                cashback2Percent = transportation * 0.02;
+            } else {
+                cashback2Percent = (card.annualCap2Percent / 12) * 0.02;
+            }
+
+            // Calculate cashback for 1% category (All other spending)
+            const remainingMonthlySpending =
+                other - (card.annualCap4Percent / 12 - cashback4Percent) - (card.annualCap2Percent / 12 - cashback2Percent);
+            let cashback1Percent = 0;
+            if (remainingMonthlySpending > 0) {
+                cashback1Percent = remainingMonthlySpending * 0.01;
+            }
+
+            // Calculate total monthly cashback
+            const totalMonthlyCashback = cashback4Percent + cashback2Percent + cashback1Percent;
+
+            // Add monthly cashback to the total
+            totalCashback += totalMonthlyCashback;
+
+            // Reduce annual caps based on the cashback earned
+            card.annualCap4Percent -= cashback4Percent;
+            card.annualCap2Percent -= cashback2Percent;
+
+            // Break the loop if annual caps are exhausted
+            if (card.annualCap4Percent <= 0 && card.annualCap2Percent <= 0) {
+                break;
+            }
+        }
+
+        finalRewards = totalCashback;
     }
 
     else if (card.institution === "RBC"){
@@ -202,9 +250,11 @@ const CardChart = () => {
     }
 
     return (
-    <div>
-        <CardSelect onChange={handleSelectChange}/>
-        <CostSlider onChange={handleSliderChange}/>
+    <div className={styles.container}>
+        <div className={styles.optionsContainer}>
+            <CardSelect onChange={handleSelectChange}/>
+            <CostSlider onChange={handleSliderChange}/>
+        </div>
         <Line data={chartData}
             options={{
                 plugins: {
@@ -222,7 +272,9 @@ const CardChart = () => {
                         y: {
                             beginAtZero: true
                         }
-                    }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: true
                 },
                 }
             }

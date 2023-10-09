@@ -14,7 +14,16 @@
             "groceryRewardCap": 500,
             "recurringRewardCap": 500,
             "transportationRewardCap": 0,
-            "image": "https://www.bmo.com/dist/images/personal/credit-cards/bmo-cashback-mastercard.png"
+            "image": "https://www.bmo.com/dist/images/personal/credit-cards/bmo-cashback-mastercard.png",
+            "visibleKeys" : [
+                "longName", "institution", "type"
+            ],
+            "modalKeys": [
+                "interestRate",
+                "annualFee",
+                "groceryCashback", "recurringCashback", "otherCashback", "transportationCashback",
+                "groceryRewardCap", "recurringRewardCap", "transportationRewardCap"
+            ]
         },
         {
             "index": 2,
@@ -29,7 +38,16 @@
             "otherCashback": 0.005,
             "rewardCapYearly": 80000,
             "overallCapYearly": 20000,
-            "image": "https://www.cibc.com/content/dam/global-assets/card-art/credit-cards/dividend-cards/cibc-dividend-visa-card-for-students/cibc-dividend-visa-card-for-students-en.png/_jcr_content/renditions/cq5dam.thumbnail.319.319.png"
+            "image": "https://www.cibc.com/content/dam/global-assets/card-art/credit-cards/dividend-cards/cibc-dividend-visa-card-for-students/cibc-dividend-visa-card-for-students-en.png/_jcr_content/renditions/cq5dam.thumbnail.319.319.png",
+            "visibleKeys" : [
+                "longName", "institution", "type"
+            ],
+            "modalKeys": [
+                "longName", "institution", "type", "interestRate",
+                "annualFee",
+                "groceryCashback", "recurringCashback", "otherCashback", "transportationCashback",
+                "rewardCapYearly", "overallCapYearly"
+            ]
         },
         {
             "index": 3,
@@ -47,8 +65,40 @@
             "groceryRewardCap": 120,
             "nonGroceryCapYearly": 6000,
             "nonGroceryEarningsCap": 30,
-            "image": "https://www.rbcroyalbank.com/credit-cards/app/assets/cards/mc1_cashbackmc_en_sm.png"
+            "image": "https://www.rbcroyalbank.com/credit-cards/app/assets/cards/mc1_cashbackmc_en_sm.png",
+            "visibleKeys" : [
+                "longName", "institution", "type"
+            ],
+            "modalKeys": [
+                "institution", "type", "interestRate",
+                "annualFee",
+                "rewardCapYearly", "grocerySpendingCapYearly", "groceryRewardCap", "nonGroceryCapYearly", "nonGroceryEarningsCap"
+            ]
 
+        },
+        {
+            "index": 4,
+            "institution": "Scotiabank",
+            "longName": "Scotiabank Momentum Visa Infinite Card",
+            "type": "Visa",
+            "annualFee": 120,
+            "interestRate": 0.2099,
+            "groceryCashback": 0.04,
+            "recurringCashback": 0.04,
+            "transportationCashback": 0.02,
+            "otherCashback": 0.01,
+            "annualCap4Percent": 25000,
+            "annualCap2Percent": 25000,
+            "visibleKeys" : [
+                "longName", "institution", "type"
+            ],
+            "modalKeys": [
+                "institution", "type", "interestRate",
+                "annualFee",
+                "groceryCashback", "recurringCashback", "otherCashback", "transportationCashback",
+                "annualCap4Percent", "annualCap2Percent"
+            ],
+            "image": "https://www.scotiabank.com/content/dam/scotiabank/canada/en/card-arts/Momentum_Visa_Infinite_ENG.png"
         }
 
     ]

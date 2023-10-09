@@ -27,11 +27,11 @@ const CostSlider = ({onChange}) => {
         onChange(value, 'other');
     }
     return (
-        <div className={styles.slider}>
+        <div className={styles.sliderContainer}>
             <label>Grocery</label>
             <Slider
                 value={grocerySliderValue}
-                className="slider"
+                className={styles.slider}
                 min={0}
                 max={10000}
                 step={500}
@@ -41,17 +41,18 @@ const CostSlider = ({onChange}) => {
             <label>Transportation</label>
             <Slider
                 value={transportationSliderValue}
-                className="slider"
+                className={styles.slider}
                 min={0}
                 max={10000}
                 step={500}
                 dots={true}
+                ariaValueTextFormatterForHandle={(value) => value.toString()}
                 onChange={handleTransportationSliderChange}
             />
             <label>Recurring</label>
             <Slider
                 value={recurringSliderValue}
-                className="slider"
+                className={styles.slider}
                 min={0}
                 max={10000}
                 step={500}
@@ -61,7 +62,7 @@ const CostSlider = ({onChange}) => {
             <label>Other</label>
             <Slider
                 value={otherSliderValue}
-                className="slider"
+                className={styles.slider}
                 min={0}
                 max={10000}
                 step={500}

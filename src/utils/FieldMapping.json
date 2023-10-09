@@ -1,0 +1,22 @@
+{
+  "longName": "Card Name",
+  "institution": "Card Issuer",
+  "type": "Card Type",
+  "annualFee": "Annual Fee",
+  "interestRate": "Card Interest Rate",
+  "groceryCashback": "Grocery Cashback",
+  "recurringCashback": "Recurring Purchases Cashback",
+  "otherCashback": "Other Purchases Cashback",
+  "transportationCashback": "Transportation Cashback",
+  "groceryRewardCap": "Grocery Rewards Cap",
+  "recurringRewardCap": "Recurring Purchases Rewards Cap",
+  "transportationRewardCap": "Transportation Rewards Cap",
+  "rewardCapYearly": "Yearly Reward Cap",
+  "overallCapYearly": "Yearly eligible spending cap",
+  "nonGroceryCapYearly": "Non-grocery rewards eligible spending cap",
+  "nonGroceryEarningsCap": "Non-grocery spending yearly rewards cap",
+  "grocerySpendingCapYearly": "Grocery spending yearly rewards cap",
+  "groceryRewardCap": "Grocery spending yearly rewards cap",
+  "annualCap4Percent": "Annual spending cap for 4% cashback",
+  "annualCap2Percent": "Annual spending cap for 2% cashback"
+}
