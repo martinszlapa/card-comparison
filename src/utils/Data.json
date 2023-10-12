@@ -99,6 +99,59 @@
                 "annualCap4Percent", "annualCap2Percent"
             ],
             "image": "https://www.scotiabank.com/content/dam/scotiabank/canada/en/card-arts/Momentum_Visa_Infinite_ENG.png"
+        },
+        {
+            "index": 5,
+            "institution": "HSBC",
+            "longName": "HSBC +Rewards Mastercard",
+            "type": "Mastercard",
+            "annualFee": 25,
+            "interestRate": 0.119,
+            "otherCashback": 0.005,
+            "restaurantEntertainmentCashback": 0.01,
+            "insuranceCoverage": "Assurant®",
+            "applePay": "Yes",
+            "zeroLiability": "Yes",
+            "image": "https://www.hsbc.ca/content/dam/hsbc/ca/banking/credit-cards/plus-rewards_en_product_page_300x474.png",
+
+            "visibleKeys": [
+                "longName", "institution", "type"
+            ],
+            "modalKeys": [
+                "interestRate",
+                "annualFee",
+                "insuranceCoverage",
+                "restaurantEntertainmentCashback",
+                "applePay",
+                "zeroLiability"
+            ]
+        },
+        {
+            "index": 6,
+            "institution": "RBC",
+            "longName": "RBC ION+ Visa Card",
+            "type": "Visa",
+            "annualFee": 48,
+            "interestRate": 0.2099,
+            "groceryPoints": 3,
+            "restaurantPoints": 3,
+            "transportationPoints": 3,
+            "otherPoints": 1,
+            "pointsDollarsRatio": "80/11200",
+            "image": "https://www.rbcroyalbank.com/credit-cards/app/assets/cards/rbc-avion-rewards-ion-plus_en_sm.png",
+            "visibleKeys": [
+                "longName", "institution", "type"
+            ],
+            "modalKeys": [
+                "interestRate",
+                "annualFee",
+                "diningAndEntertainmentPoints",
+                "insuranceCoverage",
+                "applePay",
+                "zeroLiability"
+            ]
+
+
         }
 
     ]

@@ -16,7 +16,10 @@
   "nonGroceryCapYearly": "Non-grocery rewards eligible spending cap",
   "nonGroceryEarningsCap": "Non-grocery spending yearly rewards cap",
   "grocerySpendingCapYearly": "Grocery spending yearly rewards cap",
-  "groceryRewardCap": "Grocery spending yearly rewards cap",
   "annualCap4Percent": "Annual spending cap for 4% cashback",
-  "annualCap2Percent": "Annual spending cap for 2% cashback"
+  "annualCap2Percent": "Annual spending cap for 2% cashback",
+  "diningEntertainmentCashback": "Cashback on dining and entertainment",
+  "insuranceCoverage": "Insurance coverage provider",
+  "applePay": "Apple Pay Capable",
+  "zeroLiability": "Zero liability"
 }

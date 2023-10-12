@@ -9,6 +9,7 @@ const CostSlider = ({onChange}) => {
     const [transportationSliderValue, setTransportationSliderValue] = useState(0);
     const [recurringSliderValue, setRecurringSliderValue] = useState(0);
     const [otherSliderValue, setOtherSliderValue] = useState(0);
+    const [restaurantEntertainmentSliderValue, setRestaurantEntertainmentSliderValue] = useState(0);
 
     const handleGrocerySliderChange = (value) => {
         setGrocerySliderValue(value);
@@ -21,6 +22,10 @@ const CostSlider = ({onChange}) => {
     const handleRecurringSliderChange = (value) => {
         setRecurringSliderValue(value);
         onChange(value, 'recurring');
+    }
+    const handleRestaurantEntertainmentSliderChange = (value) => {
+        setRestaurantEntertainmentSliderValue(value);
+        onChange(value, 'restaurantEntertainment');
     }
     const handleOtherSliderChange = (value) => {
         setOtherSliderValue(value);
@@ -58,6 +63,16 @@ const CostSlider = ({onChange}) => {
                 step={500}
                 dots={true}
                 onChange={handleRecurringSliderChange}
+            />
+            <label>Restaurant/Entertainment</label>
+            <Slider
+                value={restaurantEntertainmentSliderValue}
+                className={styles.slider}
+                min={0}
+                max={10000}
+                step={500}
+                dots={true}
+                onChange={handleRestaurantEntertainmentSliderChange}
             />
             <label>Other</label>
             <Slider
