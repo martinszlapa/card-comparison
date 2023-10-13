@@ -1,12 +1,8 @@
 .sliderContainer {
-    /*font-size:15px;*/
-    /*padding: 30px 30px;*/
-    /*justify-content: space-between;*/
-    /*flex-wrap: wrap;*/
+    padding: 30px;
+    justify-content: space-between;
     /*background-color:white;*/
-    /*border-radius: 25px;*/
-    /*margin:50px 0 50px 0;*/
-    /*width:90%;*/
+    border-radius: 25px;
 }
 
 .slider{

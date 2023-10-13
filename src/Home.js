@@ -3,6 +3,11 @@ import CostSliders from './CostSliders';
 import CardSelect from "./CardSelect";
 import CardChart from "./CardChart";
 import data from "./utils/Data.json";
+
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+
 const Home = () => {
     const [cost, setCost] = useState({
         grocery: 0,
@@ -14,33 +19,29 @@ const Home = () => {
 
     const [selectedCards, setSelectedCards] = useState([]);
 
-    function handleSliderChange(value, type){
+    function handleSliderChange(value, type) {
         console.log(value);
         if (type === 'grocery') {
             setCost({
                 ...cost,
                 grocery: value
             })
-        }
-        else if (type === 'transportation') {
+        } else if (type === 'transportation') {
             setCost({
                 ...cost,
                 transportation: value
             })
-        }
-        else if (type === 'recurring') {
+        } else if (type === 'recurring') {
             setCost({
                 ...cost,
                 recurring: value
             })
-        }
-        else if (type === 'restaurantEntertainment') {
+        } else if (type === 'restaurantEntertainment') {
             setCost({
                 ...cost,
                 restaurantEntertainment: value
             })
-        }
-        else if (type === 'other') {
+        } else if (type === 'other') {
             setCost({
                 ...cost,
                 other: value
@@ -48,24 +49,33 @@ const Home = () => {
         }
     }
 
-    function handleSelectChange(selectedCards){
+    function handleSelectChange(selectedCards) {
         // set data to use selected cards
         setSelectedCards(
             selectedCards.map((card) => data.cards.find((c) => c.longName === card.label))
         )
     }
 
-    return(
+    return (
         <div>
-            <h1>Home</h1>
-            <CostSliders onChange={handleSliderChange}/>
-            <CardSelect onChange={handleSelectChange}/>
-            <CardChart
-                cost={cost}
-                selectedCards={selectedCards}
-                handleSliderChange={handleSliderChange}
-                handleSelectChange={handleSelectChange}
-            />
+            <Container className={"m-5"}>
+                <Row>
+                    <Col lg={3}>
+                        <CardSelect onChange={handleSelectChange}/>
+                    </Col>
+                    <Col>
+                        <CostSliders onChange={handleSliderChange}/>
+                    </Col>
+                </Row>
+                    <CardChart
+                        cost={cost}
+                        selectedCards={selectedCards}
+                        handleSliderChange={handleSliderChange}
+                        handleSelectChange={handleSelectChange}
+                    />
+
+
+            </Container>
         </div>
     )
 }

@@ -15,9 +15,9 @@ const CardSelect = ({onChange}) => {
         onChange(selectedCards);
     }
     return (
-        <div className={styles.select}>
-            <h2>Select a card...</h2>
-            <Select
+        <div className={styles.selectContainer}>
+            <h3>Select a card...</h3>
+            <Select className={styles.select}
                 isMulti
                 options={options}
                 value={selectedCards}
