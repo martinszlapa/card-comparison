@@ -3,7 +3,7 @@ import 'rc-slider/assets/index.css'
 import React, {useState} from 'react'
 import styles from './slider.module.css';
 
-const CostSlider = ({onChange}) => {
+const CostSliders = ({onChange}) => {
 
     const [grocerySliderValue, setGrocerySliderValue] = useState(0);
     const [transportationSliderValue, setTransportationSliderValue] = useState(0);
@@ -89,4 +89,4 @@ const CostSlider = ({onChange}) => {
 };
 
 
-export default CostSlider
+export default CostSliders

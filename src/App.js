@@ -1,15 +1,18 @@
 import './App.css';
-import CardChart from './CardChart';
 import Background from './Background';
 import CardList from './CardList';
+import Home from './Home';
+
 import {Routes, Route, Outlet, Link, BrowserRouter} from "react-router-dom";
-import Navigation from "./Navigation";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+import {useState} from "react";
+import data from "./utils/Data.json";
 
 function App() {
+
   return (
     <div>
         <Navbar bg="light" expand="lg" fluid>
@@ -31,7 +34,9 @@ function App() {
             <div className={"App"}>
             <Routes>
                 <Route path="/List" element={<CardList />} />
-                <Route path="/" element={<CardChart />} />
+                <Route path="/" element={
+                    <Home />
+                } />
             </Routes>
             </div>
             <Background />
