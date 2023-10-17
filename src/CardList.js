@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
 
 import data from './utils/Data.json';
 import mapping from './utils/FieldMapping.json';
@@ -23,7 +26,7 @@ const CardList = () => {
     };
 
     return (
-        <div className={"cardList"}>
+        <div className={"list"}>
             <Form.Group className={"searchBar"}>
                 <Form.Control
                     type="text"
@@ -37,7 +40,8 @@ const CardList = () => {
                         return card.longName.toLowerCase().includes(search.toLowerCase())
                     })
                     .map((card) => (
-                <div key={card.longName} className={"listEntry"}>
+                <Row>
+                    <Col xs={12} md={6} lg={4} xl={3}  key={card.longName} className={"listEntry"}>
                     <img src={card.image} alt={card.longName} className={"cardImage"}/>
                     <h2>{card.longName}</h2>
                     {card.visibleKeys.map((key) => (
@@ -47,8 +51,8 @@ const CardList = () => {
                     <Button variant={"primary"} onClick={() => handleShow(card)}>
                         Card Details
                     </Button>
-
-                </div>
+                    </Col>
+                </Row>
             ))
             }
 

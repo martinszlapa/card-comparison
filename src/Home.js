@@ -58,21 +58,25 @@ const Home = () => {
 
     return (
         <div>
-            <Container className={"m-5"}>
-                <Row>
-                    <Col lg={3}>
+            <Container fluid className={"d-grid gap-3"}>
+                <Row className="justify-content-center">
+                    <Col  xs={12} md={6} lg={4} xl={3} className="mt-5">
                         <CardSelect onChange={handleSelectChange}/>
                     </Col>
-                    <Col>
+                    <Col  xs={15} md={8} lg={6} xl={5} className="m-3">
                         <CostSliders onChange={handleSliderChange}/>
                     </Col>
                 </Row>
+                <Row className="justify-content-center">
+                    <Col xs={12} md={9} lg={9} xl={9}>
                     <CardChart
                         cost={cost}
                         selectedCards={selectedCards}
                         handleSliderChange={handleSliderChange}
                         handleSelectChange={handleSelectChange}
                     />
+                    </Col>
+                </Row>
 
 
             </Container>
