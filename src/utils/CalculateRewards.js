@@ -1,6 +1,7 @@
 const calculateRewards = function(card, grocery, transportation, recurring, restaurantEntertainment, other, months){
     let finalRewards = 0;
     if (card.longName === "BMO Student Cashback Mastercard"){
+        other += restaurantEntertainment;
 
         let groceryRewards = 0;
         let transportationRewards = 0;
@@ -34,6 +35,8 @@ const calculateRewards = function(card, grocery, transportation, recurring, rest
 
     else if (card.longName === "CIBC Dividend Visa Card for Students"){
         let rewards = 0;
+        other += restaurantEntertainment;
+
 
         let totalRewardEligible = 0;
         let totalSpendingEligible = 0;
@@ -54,6 +57,8 @@ const calculateRewards = function(card, grocery, transportation, recurring, rest
     else if (card.longName === "Scotiabank Momentum Visa Infinite Card"){
 
         let totalCashback = 0;
+        other += restaurantEntertainment;
+
 
         for (let month = 1; month <= months; month++) {
             // Calculate cashback for 4% category (Grocery and Recurring Bill Payments)
@@ -105,6 +110,8 @@ const calculateRewards = function(card, grocery, transportation, recurring, rest
 
         let groceryRewards = 0;
         let otherRewards = 0;
+        other += restaurantEntertainment;
+
 
         for (let i = 0; i < months; i++){
             if (cumulativeGrocery < card.grocerySpendingCapYearly && groceryRewards < card.groceryRewardCap){

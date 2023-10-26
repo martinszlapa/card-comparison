@@ -3,7 +3,7 @@ import React from 'react';
 import { Bar, Chart, Line } from 'react-chartjs-2';
 import { useState, useEffect } from 'react';
 import 'chart.js/auto';
-import CostSlider from './CostSlider';
+import CostSlider from './CostSliders';
 import CardSelect from "./CardSelect";
 import styles from './chart.module.css';
 import calculateRewards from "./utils/CalculateRewards";
@@ -11,7 +11,7 @@ import calculateRewards from "./utils/CalculateRewards";
 
 
 
-const CardChart = () => {
+const CardChart = ({ cost, selectedCards}) => {
 
     const rgbaColours = [
         'rgba(255, 128, 128, 1)', // Dark Red
@@ -27,14 +27,14 @@ const CardChart = () => {
         'rgba(0, 0, 0, 1)',       // Black (fully opaque)
     ];
 
-    const [cost, setCost] = useState({
-        grocery: 0,
-        transportation: 0,
-        recurring: 0,
-        other: 0
-    })
-
-    const [selectedCards, setSelectedCards] = useState([]);
+    // const [cost, setCost] = useState({
+    //     grocery: 0,
+    //     transportation: 0,
+    //     recurring: 0,
+    //     other: 0
+    // })
+    //
+    // const [selectedCards, setSelectedCards] = useState([]);
 
     const cardDatasets = data.cards.map((card) => {
         const rewardsData = Array.from({length: 12}, (_, index) => calculateRewards(
@@ -61,7 +61,7 @@ const CardChart = () => {
 
         const updatedCardDatasets = selectedCards.map((card) => {
             const rewardsData = Array.from({length: 12}, (_, index) => calculateRewards(
-                card, cost.grocery, cost.transportation, cost.recurring, cost.restaurantEntertainment, cost.other, index + 1
+                card, cost.grocery, cost.transportation, cost.recurring, cost.restaurantEntertainment,  cost.other, index + 1
             ));
 
             return {
@@ -79,53 +79,9 @@ const CardChart = () => {
         });
     }, [cost, selectedCards]);
 
-    function handleSliderChange(value, type){
-        console.log(value);
-        if (type === 'grocery') {
-            setCost({
-                ...cost,
-                grocery: value
-            })
-        }
-        else if (type === 'transportation') {
-            setCost({
-                ...cost,
-                transportation: value
-            })
-        }
-        else if (type === 'recurring') {
-            setCost({
-                ...cost,
-                recurring: value
-            })
-        }
-        else if (type === 'restaurantEntertainment') {
-            setCost({
-                ...cost,
-                restaurantEntertainment: value
-            })
-        }
-        else if (type === 'other') {
-            setCost({
-                ...cost,
-                other: value
-            })
-        }
-    }
-
-    function handleSelectChange(selectedCards){
-        // set data to use selected cards
-        setSelectedCards(
-            selectedCards.map((card) => data.cards.find((c) => c.longName === card.label))
-        )
-    }
 
     return (
     <div className={styles.container}>
-        <div className={styles.optionsContainer}>
-            <CardSelect onChange={handleSelectChange}/>
-            <CostSlider onChange={handleSliderChange}/>
-        </div>
         <Line data={chartData}
             options={{
                 plugins: {
