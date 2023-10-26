@@ -41,7 +41,7 @@ const CardList = () => {
                     })
                     .map((card) => (
                 <Row>
-                    <Col xs={12} md={6} lg={4} xl={3}  key={card.longName} className={"listEntry"}>
+                    <Col xs={12} md={6} lg={4} xl={4}  key={card.longName} className={"listEntry"}>
                     <img src={card.image} alt={card.longName} className={"cardImage"}/>
                     <h2>{card.longName}</h2>
                     {card.visibleKeys.map((key) => (

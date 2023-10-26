@@ -5,20 +5,22 @@
 
 .listEntry{
     margin:10px;
+    padding:10px 0px 10px 0px;
     border-radius: 20px;
     background-color: #EFF2F1;
-    padding: 10px 10px 10px 50px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-    text-align: left;
     justify-content: center;
     align-items:center;
+    text-align: left;
+    display:flex;
+    flex-direction:column;
 }
 
 .cardImage{
     box-shadow: #001B2E 0px 0px 10px 0px;
     border-radius: 10px;
     margin: 20px;
-    width:20rem;
+    width:50%;
 }
 
 .modal{

@@ -2,14 +2,28 @@ import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import React, {useState} from 'react'
 import styles from './slider.module.css';
+import Cookies from 'js-cookie';
+import {BsFillBasketFill, BsFillBusFrontFill, BsFillPhoneFill, BsFilm, BsThreeDots} from 'react-icons/bs';
 
 const CostSliders = ({onChange}) => {
 
-    const [grocerySliderValue, setGrocerySliderValue] = useState(0);
-    const [transportationSliderValue, setTransportationSliderValue] = useState(0);
-    const [recurringSliderValue, setRecurringSliderValue] = useState(0);
-    const [otherSliderValue, setOtherSliderValue] = useState(0);
-    const [restaurantEntertainmentSliderValue, setRestaurantEntertainmentSliderValue] = useState(0);
+    const costCookieValue = Cookies.get('cost');
+
+    const [sliderMax, setSliderMax] = useState(5000);
+
+    const initialCostValue = costCookieValue ? JSON.parse(costCookieValue) : {
+        grocery: 0,
+        transportation: 0,
+        recurring: 0,
+        restaurantEntertainment: 0,
+        other: 0
+    }
+
+    const [grocerySliderValue, setGrocerySliderValue] = useState(initialCostValue.grocery);
+    const [transportationSliderValue, setTransportationSliderValue] = useState(initialCostValue.transportation);
+    const [recurringSliderValue, setRecurringSliderValue] = useState(initialCostValue.recurring);
+    const [otherSliderValue, setOtherSliderValue] = useState(initialCostValue.other);
+    const [restaurantEntertainmentSliderValue, setRestaurantEntertainmentSliderValue] = useState(initialCostValue.restaurantEntertainment);
 
     const handleGrocerySliderChange = (value) => {
         setGrocerySliderValue(value);
@@ -33,55 +47,45 @@ const CostSliders = ({onChange}) => {
     }
     return (
         <div className={styles.sliderContainer}>
-            <label>Grocery</label>
+            <label> <BsFillBasketFill/> Grocery: {grocerySliderValue} $ / month</label>
             <Slider
                 value={grocerySliderValue}
                 className={styles.slider}
                 min={0}
-                max={10000}
-                step={500}
-                dots={true}
+                max={sliderMax}
                 onChange={handleGrocerySliderChange}
             />
-            <label>Transportation</label>
+            <label> <BsFillBusFrontFill/> Transportation: {transportationSliderValue} $ / month</label>
             <Slider
                 value={transportationSliderValue}
                 className={styles.slider}
                 min={0}
-                max={10000}
-                step={500}
-                dots={true}
+                max={sliderMax}
                 ariaValueTextFormatterForHandle={(value) => value.toString()}
                 onChange={handleTransportationSliderChange}
             />
-            <label>Recurring</label>
+            <label> <BsFillPhoneFill/> Recurring: {recurringSliderValue} $ / month</label>
             <Slider
                 value={recurringSliderValue}
                 className={styles.slider}
                 min={0}
-                max={10000}
-                step={500}
-                dots={true}
+                max={sliderMax}
                 onChange={handleRecurringSliderChange}
             />
-            <label>Restaurant/Entertainment</label>
+            <label> <BsFilm/> Restaurant/Entertainment: {restaurantEntertainmentSliderValue} $ / month</label>
             <Slider
                 value={restaurantEntertainmentSliderValue}
                 className={styles.slider}
                 min={0}
-                max={10000}
-                step={500}
-                dots={true}
+                max={sliderMax}
                 onChange={handleRestaurantEntertainmentSliderChange}
             />
-            <label>Other</label>
+            <label> <BsThreeDots/> Other: {otherSliderValue} $ / month</label>
             <Slider
                 value={otherSliderValue}
                 className={styles.slider}
                 min={0}
-                max={10000}
-                step={500}
-                dots={true}
+                max={sliderMax}
                 onChange={handleOtherSliderChange}
             />
         </div>

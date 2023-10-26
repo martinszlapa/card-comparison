@@ -11,7 +11,7 @@ import calculateRewards from "./utils/CalculateRewards";
 
 
 
-const CardChart = ({ cost, selectedCards, handleSliderChange, handleSelectChange}) => {
+const CardChart = ({ cost, selectedCards}) => {
 
     const rgbaColours = [
         'rgba(255, 128, 128, 1)', // Dark Red

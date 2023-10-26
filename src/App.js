@@ -8,8 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import {useState} from "react";
-import data from "./utils/Data.json";
+
 
 function App() {
 
