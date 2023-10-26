@@ -10,10 +10,8 @@
             "groceryCashback": 0.03,
             "recurringCashback": 0.01,
             "otherCashback": 0.005,
-            "transportationCashback": 0.005,
             "groceryRewardCap": 500,
             "recurringRewardCap": 500,
-            "transportationRewardCap": 0,
             "image": "https://www.bmo.com/dist/images/personal/credit-cards/bmo-cashback-mastercard.png",
             "visibleKeys" : [
                 "longName", "institution", "type"
@@ -36,8 +34,8 @@
             "recurringCashback": 0.01,
             "transportationCashback": 0.01,
             "otherCashback": 0.005,
-            "rewardCapYearly": 80000,
-            "overallCapYearly": 20000,
+            "overallSpendingCap": 80000,
+            "eligibleSpendingCap": 20000,
             "image": "https://www.cibc.com/content/dam/global-assets/card-art/credit-cards/dividend-cards/cibc-dividend-visa-card-for-students/cibc-dividend-visa-card-for-students-en.png/_jcr_content/renditions/cq5dam.thumbnail.319.319.png",
             "visibleKeys" : [
                 "longName", "institution", "type"
@@ -56,15 +54,12 @@
             "type": "Mastercard",
             "annualFee": 0,
             "interestRate": 0.2099,
-            "groceryCashbackMax": 0.02,
-            "groceryCashbackMin": 0.01,
-            "otherCashbackMin": 0.005,
-            "otherCashbackMax": 0.01,
+            "groceryCashback": 0.02,
+            "otherCashbackBelowCap": 0.005,
+            "otherCashbackAboveCap": 0.01,
             "rewardCapYearly": 120,
             "grocerySpendingCapYearly": 6000,
-            "groceryRewardCap": 120,
-            "nonGroceryCapYearly": 6000,
-            "nonGroceryEarningsCap": 30,
+            "otherSpendingCapYearly": 6000,
             "image": "https://www.rbcroyalbank.com/credit-cards/app/assets/cards/mc1_cashbackmc_en_sm.png",
             "visibleKeys" : [
                 "longName", "institution", "type"
@@ -83,8 +78,7 @@
             "type": "Visa",
             "annualFee": 120,
             "interestRate": 0.2099,
-            "groceryCashback": 0.04,
-            "recurringCashback": 0.04,
+            "groceryRecurringCashback": 0.04,
             "transportationCashback": 0.02,
             "otherCashback": 0.01,
             "annualCap4Percent": 25000,
@@ -150,9 +144,34 @@
                 "applePay",
                 "zeroLiability"
             ]
-
-
+        },
+        {
+            "index": 7,
+            "institution": "TD",
+            "longName": "TD Rewards Visa Card",
+            "type": "Visa",
+            "annualFee": 0,
+            "interestRate": 0.199,
+            "groceryPoints": 3,
+            "recurringPoints": 2,
+            "restaurantPoints": 3,
+            "annualPointsCap": 5000,
+            "otherPoints": 1,
+            "pointsPerDollar": 200,
+            "image": "https://www.td.com/content/dam/tdct/images/personal-banking/browse-all/RewardsTravel_VISA_MKT_RGB_L_EN_548x344.jpg",
+            "visibleKeys": [
+                "longName", "institution", "type"
+            ],
+            "modalKeys": [
+                "interestRate",
+                "annualFee",
+                "groceryPoints",
+                "recurringPoints",
+                "restaurantPoints",
+                "pointsPerDollar"
+            ]
         }
+
 
     ]
 }

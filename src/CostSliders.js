@@ -4,6 +4,7 @@ import React, {useState} from 'react'
 import styles from './slider.module.css';
 import Cookies from 'js-cookie';
 import {BsFillBasketFill, BsFillBusFrontFill, BsFillPhoneFill, BsFilm, BsThreeDots} from 'react-icons/bs';
+import Button from "react-bootstrap/Button";
 
 const CostSliders = ({onChange}) => {
 
@@ -24,6 +25,10 @@ const CostSliders = ({onChange}) => {
     const [recurringSliderValue, setRecurringSliderValue] = useState(initialCostValue.recurring);
     const [otherSliderValue, setOtherSliderValue] = useState(initialCostValue.other);
     const [restaurantEntertainmentSliderValue, setRestaurantEntertainmentSliderValue] = useState(initialCostValue.restaurantEntertainment);
+
+    const increaseSlider = () => {
+        setSliderMax(sliderMax + 1000);
+    }
 
     const handleGrocerySliderChange = (value) => {
         setGrocerySliderValue(value);
@@ -47,6 +52,11 @@ const CostSliders = ({onChange}) => {
     }
     return (
         <div className={styles.sliderContainer}>
+            <div>
+
+                <Button onClick={increaseSlider} variant={"secondary"}>+</Button> Increase slider maximum value ({sliderMax})
+            </div>
+
             <label> <BsFillBasketFill/> Grocery: {grocerySliderValue} $ / month</label>
             <Slider
                 value={grocerySliderValue}
@@ -55,6 +65,7 @@ const CostSliders = ({onChange}) => {
                 max={sliderMax}
                 onChange={handleGrocerySliderChange}
             />
+
             <label> <BsFillBusFrontFill/> Transportation: {transportationSliderValue} $ / month</label>
             <Slider
                 value={transportationSliderValue}
