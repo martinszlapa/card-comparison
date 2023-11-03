@@ -14,8 +14,8 @@ function App() {
 
   return (
     <div>
-        <Navbar bg="light" expand="lg" fluid>
-            <Container expand = "lg" className="bg-body-tertiary">
+        <Navbar bg="dark" data-bs-theme="dark" expand="lg" fluid>
+            <Container expand = "lg">
                 <Navbar.Brand>Credit Card Comparison</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

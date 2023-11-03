@@ -9,7 +9,28 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Cookies from 'js-cookie';
 
+import Joyride from 'react-joyride'
+import Button from "react-bootstrap/Button";
+
+
 const Home = () => {
+
+    const state = {
+        steps : [
+            {
+                target: '.cardSelectContainer',
+                content: 'Choose your cards here',
+                placement: 'top',
+            },
+            {
+                target: '.spendingSliderContainer',
+                content: 'Adjust your spending here',
+                placement: 'top',
+            }
+        ]
+    }
+
+    const [tourOpen, setTourOpen] = useState(false);
 
     const costCookieValue = Cookies.get('cost')
 
@@ -29,6 +50,10 @@ const Home = () => {
     const [cost, setCost] = useState(initialCostValue);
 
     const [selectedCards, setSelectedCards] = useState(initialSelectValue);
+
+    function startTour() {
+        setTourOpen(true);
+    }
 
     function handleSliderChange(value, type) {
         console.log(value);
@@ -74,13 +99,27 @@ const Home = () => {
 
     return (
         <div>
+            <Button onClick={startTour}>Start Tour</Button>
+            <Joyride
+                steps={state.steps}
+                run={tourOpen}
+                continuous={true}
+                scrollToFirstStep={true}
+                showProgress={true}
+                showSkipButton={true}
+                styles={{
+                    options: {
+
+                    }
+                }}
+            />
             <Container fluid className={"d-grid gap-3"}>
                 <Row className="justify-content-center">
                     <Col xs={12} md={6} lg={4} xl={3} className="mt-5">
-                        <CardSelect onChange={handleSelectChange}/>
+                        <CardSelect onChange={handleSelectChange} className="cardSelect"/>
                     </Col>
                     <Col xs={15} md={8} lg={6} xl={5} className="m-3">
-                        <CostSliders onChange={handleSliderChange}/>
+                        <CostSliders onChange={handleSliderChange} className={"slider"}/>
                     </Col>
                 </Row>
                 <Row className="justify-content-center">

@@ -13,6 +13,9 @@ import calculateRewards from "./utils/CalculateRewards";
 
 const CardChart = ({ cost, selectedCards}) => {
 
+
+
+
     const rgbaColours = [
         'rgba(255, 128, 128, 1)', // Dark Red
         'rgba(128, 255, 128, 1)', // Dark Green
@@ -78,6 +81,8 @@ const CardChart = ({ cost, selectedCards}) => {
             datasets: updatedCardDatasets
         });
     }, [cost, selectedCards]);
+
+
 
 
     return (
