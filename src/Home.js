@@ -9,28 +9,32 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Cookies from 'js-cookie';
 
-import Joyride from 'react-joyride'
-import Button from "react-bootstrap/Button";
+import Joyride, {STATUS} from 'react-joyride';
 
 
 const Home = () => {
 
-    const state = {
-        steps : [
+    const tourState = {
+        steps: [
             {
-                target: '.cardSelectContainer',
-                content: 'Choose your cards here',
-                placement: 'top',
+                target: '.select',
+                content: 'Select credit cards to be compared here. You can select as many as you\'d like!',
+                placement: 'bottom',
             },
             {
-                target: '.spendingSliderContainer',
-                content: 'Adjust your spending here',
-                placement: 'top',
+                target: '.slider',
+                content: 'Enter your monthly spending here. Different cards have different benefits based on how you spend your money, so try a variety of combinations to see what fits your needs.',
+                placement: 'bottom',
+            },
+            {
+                target: '.chart',
+                content: 'The rewards you will earn each month from each credit card are shown here. Try hovering over the line to see the exact value for a particular card!',
+                placement: 'bottom',
             }
         ]
     }
 
-    const [tourOpen, setTourOpen] = useState(false);
+    const [showTour, setShowTour] = useState(Cookies.get('tourShown') ? false : true);
 
     const costCookieValue = Cookies.get('cost')
 
@@ -52,7 +56,7 @@ const Home = () => {
     const [selectedCards, setSelectedCards] = useState(initialSelectValue);
 
     function startTour() {
-        setTourOpen(true);
+        setShowTour(true);
     }
 
     function handleSliderChange(value, type) {
@@ -89,6 +93,9 @@ const Home = () => {
         Cookies.set('cost', JSON.stringify(cost), {expires: 7});
     }, [cost]);
 
+    useEffect(() => { // Update tour cookie
+        if (STATUS.FINISHED) Cookies.set('tourShown', true, {expires: 7});
+    }, [STATUS.FINISHED]);
 
     function handleSelectChange(selectedCards) {
         // set data to use selected cards
@@ -97,37 +104,49 @@ const Home = () => {
         )
     }
 
+    const handleJoyrideCallback = (data) => {
+        const {action, index, status, type} = data;
+        if ([STATUS.FINISHED, STATUS.SKIPPED].includes(status)) {
+            // Need to set our running state to false, so we can restart if we click start again.
+            Cookies.set('tourShown', true, {expires: 7});
+        }
+    }
+
     return (
         <div>
-            <Button onClick={startTour}>Start Tour</Button>
             <Joyride
-                steps={state.steps}
-                run={tourOpen}
+                steps={tourState.steps}
+                run={showTour}
                 continuous={true}
                 scrollToFirstStep={true}
                 showProgress={true}
                 showSkipButton={true}
                 styles={{
-                    options: {
-
-                    }
+                    options: {}
                 }}
+                callback={handleJoyrideCallback}
             />
             <Container fluid className={"d-grid gap-3"}>
                 <Row className="justify-content-center">
                     <Col xs={12} md={6} lg={4} xl={3} className="mt-5">
-                        <CardSelect onChange={handleSelectChange} className="cardSelect"/>
+                        <div className="select">
+                            <CardSelect onChange={handleSelectChange}/>
+                        </div>
                     </Col>
                     <Col xs={15} md={8} lg={6} xl={5} className="m-3">
-                        <CostSliders onChange={handleSliderChange} className={"slider"}/>
+                        <div className="slider">
+                            <CostSliders onChange={handleSliderChange}/>
+                        </div>
                     </Col>
                 </Row>
                 <Row className="justify-content-center">
                     <Col xs={12} md={9} lg={9} xl={9}>
-                        <CardChart
-                            cost={cost}
-                            selectedCards={selectedCards}
-                        />
+                        <div className="chart">
+                            <CardChart
+                                cost={cost}
+                                selectedCards={selectedCards}
+                            />
+                        </div>
                     </Col>
                 </Row>
 

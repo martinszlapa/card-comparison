@@ -1,10 +1,8 @@
 import data from './utils/Data';
 import React from 'react';
-import { Bar, Chart, Line } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import { useState, useEffect } from 'react';
 import 'chart.js/auto';
-import CostSlider from './CostSliders';
-import CardSelect from "./CardSelect";
 import styles from './chart.module.css';
 import calculateRewards from "./utils/CalculateRewards";
 
@@ -12,9 +10,6 @@ import calculateRewards from "./utils/CalculateRewards";
 
 
 const CardChart = ({ cost, selectedCards}) => {
-
-
-
 
     const rgbaColours = [
         'rgba(255, 128, 128, 1)', // Dark Red
@@ -29,15 +24,6 @@ const CardChart = ({ cost, selectedCards}) => {
         'rgba(64, 64, 64, 1)',    // Dark Gray
         'rgba(0, 0, 0, 1)',       // Black (fully opaque)
     ];
-
-    // const [cost, setCost] = useState({
-    //     grocery: 0,
-    //     transportation: 0,
-    //     recurring: 0,
-    //     other: 0
-    // })
-    //
-    // const [selectedCards, setSelectedCards] = useState([]);
 
     const cardDatasets = data.cards.map((card) => {
         const rewardsData = Array.from({length: 12}, (_, index) => calculateRewards(
