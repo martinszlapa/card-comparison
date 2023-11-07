@@ -1,10 +1,10 @@
 import './App.css';
-import Background from './Background';
 import CardList from './CardList';
 import Home from './Home';
 
 import {Routes, Route, Outlet, Link, BrowserRouter} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import './bootstrap.css'
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div>
-        <Navbar bg="dark" data-bs-theme="dark" expand="lg" fluid>
+        <Navbar className = {"App-header"} bg="dark" data-bs-theme="dark" expand="lg" fluid>
             <Container expand = "lg">
                 <Navbar.Brand>Credit Card Comparison</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -38,7 +38,7 @@ function App() {
                 } />
             </Routes>
             </div>
-            <Background />
+            {/*<Background />*/}
         </BrowserRouter>
         <footer className={"App-footer"}>&copy; Martin Szlapa 2023</footer>
     </div>

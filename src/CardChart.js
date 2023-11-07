@@ -12,6 +12,7 @@ import calculateRewards from "./utils/CalculateRewards";
 const CardChart = ({ cost, selectedCards}) => {
 
     const rgbaColours = [
+
         'rgba(255, 128, 128, 1)', // Dark Red
         'rgba(128, 255, 128, 1)', // Dark Green
         'rgba(128, 128, 255, 1)', // Dark Blue
@@ -25,6 +26,20 @@ const CardChart = ({ cost, selectedCards}) => {
         'rgba(0, 0, 0, 1)',       // Black (fully opaque)
     ];
 
+    const rgbaColoursTransparent = [
+        'rgba(255, 128, 128, 0.1)', // Dark Red
+        'rgba(128, 255, 128, 0.1)', // Dark Green
+        'rgba(128, 128, 255, 0.1)', // Dark Blue
+        'rgba(255, 255, 128, 0.1)', // Dark Yellow
+        'rgba(255, 179, 102, 0.1)', // Dark Orange
+        'rgba(153, 51, 153, 0.1)',  // Dark Purple
+        'rgba(255, 140, 149, 0.1)', // Dark Pink
+        'rgba(0, 128, 128, 0.1)',   // Dark Teal
+        'rgba(139, 35, 35, 0.1)',   // Dark Brown
+        'rgba(64, 64, 64, 0.1)',    // Dark Gray
+        'rgba(0, 0, 0, 0.1)',       // Black (90% transparent)
+    ];
+
     const cardDatasets = data.cards.map((card) => {
         const rewardsData = Array.from({length: 12}, (_, index) => calculateRewards(
             card, cost.grocery, cost.transportation, cost.recurring, cost.restaurantEntertainment, cost.other, index + 1
@@ -33,9 +48,10 @@ const CardChart = ({ cost, selectedCards}) => {
         return {
             label: card.longName,
             data: rewardsData,
-            backgroundColor: rgbaColours[card.index-1],
+            backgroundColor: rgbaColoursTransparent[card.index-1],
             borderColor: rgbaColours[card.index-1],
-            borderWidth: 1,
+            borderWidth: 7,
+            fill : false
         }
     })
 
@@ -56,9 +72,10 @@ const CardChart = ({ cost, selectedCards}) => {
             return {
                 label: card.longName,
                 data: rewardsData,
-                backgroundColor: rgbaColours[card.index-1],
+                backgroundColor: rgbaColoursTransparent[card.index-1],
                 borderColor: rgbaColours[card.index-1],
-                borderWidth: 5,
+                borderWidth: 7,
+                fill: false
             }
         })
 
@@ -75,6 +92,33 @@ const CardChart = ({ cost, selectedCards}) => {
     <div className={styles.container}>
         <Line data={chartData}
             options={{
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Months',
+                            font: {
+                                size: 20
+                            }
+                        },
+                        grid: {
+                            borderWidth: 5,
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Accumulated Cashback (CAD)',
+                            font: {
+                                size: 20
+                            }
+                        },
+                        grid:{
+                            borderWidth: 5,
+                        },
+                        beginAtZero: true,
+                    },
+                },
                 plugins: {
                     title: {
                         display: true,
@@ -84,23 +128,9 @@ const CardChart = ({ cost, selectedCards}) => {
                         }
                     },
                     legend: {
-                        display: false
+                        display: false,
                     },
-                    scales: {
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Months',
-                            },
-                        },
-                        y: {
-                            title: {
-                                display: true,
-                                text: 'Accumulated Rewards (CAD)',
-                            },
-                            beginAtZero: true,
-                        },
-                    },
+
                     responsive: true,
                     maintainAspectRatio: true,
                     tooltip: {

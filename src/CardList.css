@@ -1,32 +1,28 @@
 .list{
-    display: block;
     margin:3%  5% 3% 5%;
 }
 
 .listEntry{
-    margin:10px;
-    padding:10px 0px 10px 0px;
-    border-radius: 20px;
-    background-color: #EFF2F1;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-    justify-content: center;
-    align-items:center;
-    text-align: left;
-    display:flex;
+    padding: 30px;
+    margin: 30px;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border-radius: 25px;
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
     flex-direction:column;
 }
 
 .cardImage{
     box-shadow: #001B2E 0px 0px 10px 0px;
-    border-radius: 10px;
-    margin: 20px;
+    border-radius: 20px;
+    margin:30px;
     width:50%;
-}
-
-.modal{
-
 }
 
 .searchBar{
     padding-bottom:50px;
+}
+
+.modalButton{
+    width: 20%;
 }

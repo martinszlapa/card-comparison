@@ -105,7 +105,7 @@ const Home = () => {
     }
 
     const handleJoyrideCallback = (data) => {
-        const {action, index, status, type} = data;
+        const {status} = data;
         if ([STATUS.FINISHED, STATUS.SKIPPED].includes(status)) {
             // Need to set our running state to false, so we can restart if we click start again.
             Cookies.set('tourShown', true, {expires: 7});
