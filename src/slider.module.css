@@ -6,6 +6,11 @@
 }
 
 .slider{
-    /*padding: 20px 0 10px 0;*/
-    /*margin:10px;*/
+    margin:20px;
+}
+
+.buttonContainer{
+/*    aligns the button on the right side of the screen */
+    display: flex;
+    justify-content: flex-end;
 }

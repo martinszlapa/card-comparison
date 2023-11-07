@@ -52,11 +52,6 @@ const CostSliders = ({onChange}) => {
     }
     return (
         <div className={styles.sliderContainer}>
-            <div>
-
-                <Button onClick={increaseSlider} variant={"secondary"}>+</Button> Increase slider maximum value ({sliderMax})
-            </div>
-
             <label> <BsFillBasketFill/> Grocery: {grocerySliderValue} $ / month</label>
             <Slider
                 value={grocerySliderValue}
@@ -99,6 +94,9 @@ const CostSliders = ({onChange}) => {
                 max={sliderMax}
                 onChange={handleOtherSliderChange}
             />
+            <div className={styles.buttonContainer}>
+                <Button onClick={increaseSlider} variant={"secondary"}>+</Button>
+            </div>
         </div>
     );
 };
