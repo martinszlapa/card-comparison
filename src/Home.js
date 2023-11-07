@@ -18,17 +18,17 @@ const Home = () => {
         steps: [
             {
                 target: '.select',
-                content: 'Select credit cards to be compared here. You can select as many as you\'d like!',
+                content: <strong>Select credit cards to be compared here. You can select as many as you'd like</strong>,
                 placement: 'bottom',
             },
             {
                 target: '.slider',
-                content: 'Enter your monthly spending here. Different cards have different benefits based on how you spend your money, so try a variety of combinations to see what fits your needs.',
+                content: <strong>Enter your monthly spending here. Different cards have different benefits based on how you spend your money, so try a variety of combinations to see what fits your needs.</strong>,
                 placement: 'bottom',
             },
             {
                 target: '.chart',
-                content: 'The rewards you will earn each month from each credit card are shown here. Try hovering over the line to see the exact value for a particular card!',
+                content: <strong>The rewards you will earn each month from each credit card are shown here. Try hovering over the line to see the exact value for a particular card!</strong>,
                 placement: 'bottom',
             }
         ]
