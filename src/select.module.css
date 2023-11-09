@@ -5,8 +5,15 @@
     background-color:#ffffff;
     border-radius:25px;
     filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.25));
+    overflow: visible !important;
+    z-index: 100;
+    position: relative;
 }
 
 .select{
+    z-index:100;
+}
 
+.switch{
+    margin:20px;
 }

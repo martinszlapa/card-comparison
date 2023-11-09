@@ -35,7 +35,6 @@ const Home = () => {
     }
 
     const [showTour, setShowTour] = useState(Cookies.get('tourShown') ? false : true);
-
     const costCookieValue = Cookies.get('cost')
 
     const initialCostValue =
@@ -128,7 +127,7 @@ const Home = () => {
             />
             <Container fluid className={"d-grid gap-3"}>
                 <Row className="justify-content-center">
-                    <Col xs={12} md={6} lg={4} xl={3} className="mt-5">
+                    <Col xs={12} md={6} lg={4} xl={3} className="mt-5 d-flex justify-content-center align-items-center">
                         <div className="select">
                             <CardSelect onChange={handleSelectChange}/>
                         </div>

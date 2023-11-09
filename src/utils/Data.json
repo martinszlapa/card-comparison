@@ -21,7 +21,8 @@
                 "annualFee",
                 "groceryCashback", "recurringCashback", "otherCashback", "transportationCashback",
                 "groceryRewardCap", "recurringRewardCap", "transportationRewardCap"
-            ]
+            ],
+            "points": false
         },
         {
             "index": 2,
@@ -45,7 +46,8 @@
                 "annualFee",
                 "groceryCashback", "recurringCashback", "otherCashback", "transportationCashback",
                 "rewardCapYearly", "overallCapYearly"
-            ]
+            ],
+            "points": false
         },
         {
             "index": 3,
@@ -68,7 +70,8 @@
                 "institution", "type", "interestRate",
                 "annualFee",
                 "rewardCapYearly", "grocerySpendingCapYearly", "groceryRewardCap", "nonGroceryCapYearly", "nonGroceryEarningsCap"
-            ]
+            ],
+            "points": false
 
         },
         {
@@ -92,7 +95,8 @@
                 "groceryCashback", "recurringCashback", "otherCashback", "transportationCashback",
                 "annualCap4Percent", "annualCap2Percent"
             ],
-            "image": "https://www.scotiabank.com/content/dam/scotiabank/canada/en/card-arts/Momentum_Visa_Infinite_ENG.png"
+            "image": "https://www.scotiabank.com/content/dam/scotiabank/canada/en/card-arts/Momentum_Visa_Infinite_ENG.png",
+            "points": false
         },
         {
             "index": 5,
@@ -118,7 +122,8 @@
                 "restaurantEntertainmentCashback",
                 "applePay",
                 "zeroLiability"
-            ]
+            ],
+            "points": true
         },
         {
             "index": 6,
@@ -143,7 +148,8 @@
                 "insuranceCoverage",
                 "applePay",
                 "zeroLiability"
-            ]
+            ],
+            "points": true
         },
         {
             "index": 7,
@@ -169,7 +175,8 @@
                 "recurringPoints",
                 "restaurantPoints",
                 "pointsPerDollar"
-            ]
+            ],
+            "points": true
         }
 
 
