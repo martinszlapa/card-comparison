@@ -29,6 +29,15 @@ const CardSelect = ({onChange}) => {
 
     const handleToggleSwitch = (e) => {
         setShowPointsCards(e.target.checked);
+        let newCardArray = [... selectedCards];
+
+        for (let i = 0; i < selectedCards.length; i++) {
+            if (selectedCards[i].points === true && e.target.checked === false) {
+                newCardArray.splice(i, 1);
+            }
+        }
+
+        setSelectedCards(newCardArray);
     }
 
     useEffect(() => {

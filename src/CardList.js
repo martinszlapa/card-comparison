@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container'
 
 import data from './utils/Data.json';
 import mapping from './utils/FieldMapping.json';
-import './CardList.css';
+import styles from './list.module.css';
 
 
 const CardList = () => {
@@ -26,8 +26,8 @@ const CardList = () => {
     };
 
     return (
-        <div className={"list"}>
-            <Form.Group className={"searchBar"}>
+        <div className={styles.list}>
+            <Form.Group className={styles.searchBar}>
                 <Form.Control
                     type="text"
                     placeholder="Search... "
@@ -41,14 +41,14 @@ const CardList = () => {
                     })
                     .map((card) => (
                         <Row>
-                            <Col xs={12} md={6} lg={6} xl={6} key={card.longName} className={"listEntry"}>
-                                <img src={card.image} alt={card.longName} className={"cardImage"}/>
+                            <Col xs={12} md={6} lg={6} xl={6} key={card.longName} className={styles.listEntry}>
+                                <img src={card.image} alt={card.longName} className={styles.cardImage}/>
                                 <h2>{card.longName}</h2>
                                 {card.visibleKeys.map((key) => (
                                     <p key={key}><strong>{mapping[key]}:</strong> {card[key]}</p>
                                 ))
                                 }
-                                <Button className={"modalButton"} variant={"primary"} onClick={() => handleShow(card)}>
+                                <Button className={styles.modalButton} variant={"primary"} onClick={() => handleShow(card)}>
                                     Card Details
                                 </Button>
                             </Col>
@@ -63,7 +63,7 @@ const CardList = () => {
                     </Modal.Header>
                     <Modal.Body>
                         <div>
-                            <img src={selectedCard.image} alt={selectedCard.longName} className={"cardImage"}/>
+                            <img src={selectedCard.image} alt={selectedCard.longName} className={styles.cardImage}/>
                             {selectedCard.modalKeys.map((key) => (
                                 <p key={key}><strong>{mapping[key]}:</strong> {selectedCard[key]}</p>
                             ))
