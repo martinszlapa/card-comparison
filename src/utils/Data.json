@@ -144,10 +144,12 @@
             "modalKeys": [
                 "interestRate",
                 "annualFee",
-                "diningAndEntertainmentPoints",
-                "insuranceCoverage",
-                "applePay",
-                "zeroLiability"
+                "interestRate",
+                "groceryPoints",
+                "restaurantPoints",
+                "transportationPoints",
+                "otherPoints",
+                "pointsDollarsRatio"
             ],
             "points": true
         },

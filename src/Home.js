@@ -18,7 +18,7 @@ const Home = () => {
         steps: [
             {
                 target: '.select',
-                content: <strong>Select credit cards to be compared here. You can select as many as you'd like</strong>,
+                content: <strong>Select credit cards to be compared here. You can select as many as you'd like.</strong>,
                 placement: 'bottom',
             },
             {

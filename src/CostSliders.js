@@ -13,11 +13,11 @@ const CostSliders = ({onChange}) => {
     const [sliderMax, setSliderMax] = useState(5000);
 
     const initialCostValue = costCookieValue ? JSON.parse(costCookieValue) : {
-        grocery: 0,
-        transportation: 0,
-        recurring: 0,
-        restaurantEntertainment: 0,
-        other: 0
+        grocery: 800,
+        transportation: 150,
+        recurring: 200,
+        restaurantEntertainment: 400,
+        other: 900
     }
 
     const [grocerySliderValue, setGrocerySliderValue] = useState(initialCostValue.grocery);
@@ -52,6 +52,7 @@ const CostSliders = ({onChange}) => {
     }
     return (
         <div className={styles.sliderContainer}>
+            <h2>Monthly Spending</h2>
             <label> <BsFillBasketFill/> Grocery: {grocerySliderValue} $ / month</label>
             <Slider
                 value={grocerySliderValue}

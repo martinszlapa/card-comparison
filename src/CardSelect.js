@@ -10,13 +10,17 @@ const CardSelect = ({onChange}) => {
 
     const selectCookieValue = Cookies.get('select');
 
-    const initialSelectValue = selectCookieValue ? JSON.parse(selectCookieValue) : [];
+    const initialSelectValue = selectCookieValue ? JSON.parse(selectCookieValue) : [
+        {"value": "BMO", "label": "BMO Student Cashback Mastercard"},
+        {"value": "RBC", "label": "RBC Cash Back Mastercard"},
+        {"value": "CIBC", "label": "CIBC Dividend Visa Card for Students"}
+    ];
 
     const [selectedCards, setSelectedCards] = useState(initialSelectValue);
-    const [showPointsCards, setShowPointsCards] = useState(false);
+    const [showPointsCards, setShowPointsCards] = useState(true);
 
     const options = data.cards
-        .filter((card) => card.points === false || card.points === showPointsCards )
+        .filter((card) => card.points === false || card.points === showPointsCards)
         .map((card) => ({
             value: card.institution,
             label: card.longName,
@@ -29,7 +33,7 @@ const CardSelect = ({onChange}) => {
 
     const handleToggleSwitch = (e) => {
         setShowPointsCards(e.target.checked);
-        let newCardArray = [... selectedCards];
+        let newCardArray = [...selectedCards];
 
         for (let i = 0; i < selectedCards.length; i++) {
             if (selectedCards[i].points === true && e.target.checked === false) {

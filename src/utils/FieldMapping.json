@@ -11,6 +11,7 @@
   "groceryRewardCap": "Grocery Rewards Cap",
   "recurringRewardCap": "Recurring Purchases Rewards Cap",
   "transportationRewardCap": "Transportation Rewards Cap",
+  "restaurantEntertainmentCashback": "Restaurant/Entertainment Cashback",
   "rewardCapYearly": "Yearly Reward Cap",
   "overallCapYearly": "Yearly eligible spending cap",
   "nonGroceryCapYearly": "Non-grocery rewards eligible spending cap",
@@ -21,5 +22,12 @@
   "diningEntertainmentCashback": "Cashback on dining and entertainment",
   "insuranceCoverage": "Insurance coverage provider",
   "applePay": "Apple Pay Capable",
-  "zeroLiability": "Zero liability"
+  "zeroLiability": "Zero liability",
+  "pointsDollarsRatio": "Points to dollars ratio",
+  "groceryPoints":  "Grocery Points",
+  "restaurantPoints":  "Restaurant Points",
+  "transportationPoints":  "Transportation Points",
+  "otherPoints":  "Other Points",
+  "recurringPoints":  "Recurring Purchase Points",
+  "pointsPerDollar": "Points equal to 1 dollar"
 }
