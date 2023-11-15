@@ -136,7 +136,8 @@
             "restaurantPoints": 3,
             "transportationPoints": 3,
             "otherPoints": 1,
-            "pointsDollarsRatio": "80/11200",
+            "averagePointValue": "0.01",
+            "welcomePoints": 3500,
             "image": "https://www.rbcroyalbank.com/credit-cards/app/assets/cards/rbc-avion-rewards-ion-plus_en_sm.png",
             "visibleKeys": [
                 "longName", "institution", "type"
@@ -145,11 +146,12 @@
                 "interestRate",
                 "annualFee",
                 "interestRate",
+                "welcomePoints",
                 "groceryPoints",
                 "restaurantPoints",
                 "transportationPoints",
                 "otherPoints",
-                "pointsDollarsRatio"
+                "pointValue"
             ],
             "points": true
         },

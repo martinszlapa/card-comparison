@@ -29,5 +29,6 @@
   "transportationPoints":  "Transportation Points",
   "otherPoints":  "Other Points",
   "recurringPoints":  "Recurring Purchase Points",
-  "pointsPerDollar": "Points equal to 1 dollar"
+  "pointsPerDollar": "Points equal to 1 dollar",
+  "averagePointValue": "Average point value"
 }

@@ -18,7 +18,9 @@ const Home = () => {
         steps: [
             {
                 target: '.select',
-                content: <strong>Select credit cards to be compared here. You can select as many as you'd like.</strong>,
+                content: <strong>Select credit cards to be compared here. You can select as many as you'd like.
+                Toggle the slider to choose whether cash-equivalent points cards are shown, or if you'd only like to see
+                cards that give direct cashback rewards.</strong>,
                 placement: 'bottom',
             },
             {

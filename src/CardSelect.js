@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form'
 import data from './utils/Data'
 import styles from './select.module.css';
 import Cookies from 'js-cookie';
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 
 const CardSelect = ({onChange}) => {
@@ -17,7 +19,9 @@ const CardSelect = ({onChange}) => {
     ];
 
     const [selectedCards, setSelectedCards] = useState(initialSelectValue);
-    const [showPointsCards, setShowPointsCards] = useState(true);
+    const [showPointsCards, setShowPointsCards] = useState(Cookies.get('showPointsCards') ? Cookies.get('showPointsCards') : false);
+
+    const [modalShown, setModalShown] = useState(Cookies.get('modalShown') ? Cookies.get('modalShown') : false);
 
     const options = data.cards
         .filter((card) => card.points === false || card.points === showPointsCards)
@@ -33,6 +37,7 @@ const CardSelect = ({onChange}) => {
 
     const handleToggleSwitch = (e) => {
         setShowPointsCards(e.target.checked);
+        Cookies.set('showPointsCards', e.target.checked, {expires: 7})
         let newCardArray = [...selectedCards];
 
         for (let i = 0; i < selectedCards.length; i++) {
@@ -42,6 +47,11 @@ const CardSelect = ({onChange}) => {
         }
 
         setSelectedCards(newCardArray);
+    }
+
+    const handleModalClose = () => {
+        setModalShown(true);
+        Cookies.set('modalShown', true, {expires: 7});
     }
 
     useEffect(() => {
@@ -60,7 +70,6 @@ const CardSelect = ({onChange}) => {
             />
             <Form>
                 <Form.Check
-                    defaultChecked={showPointsCards}
                     type="switch"
                     id="points-switch"
                     className={styles.switch}
@@ -68,6 +77,22 @@ const CardSelect = ({onChange}) => {
                     onChange={handleToggleSwitch}
                 />
             </Form>
+
+            {modalShown === false && showPointsCards === true && (<Modal show={showPointsCards} onHide={handleModalClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>A note about cash-equivalent points cards</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <div>
+                        Please note that the value of cash-equivalent points shown here is not guaranteed.
+                        Whilst the value shown is representative of the average value of points, the actual value may
+                        change depending on where the points are spent, current offers from credit card providers,
+                        and changes in policy. For example, some points may only be redeemable for full value when used for
+                        travel, gift card purchases, or paying off a credit card. Please see the credit card provider's
+                         website for more information. Thank you!
+                    </div>
+                </Modal.Body>
+            </Modal>)}
         </div>
     )
 }

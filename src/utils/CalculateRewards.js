@@ -128,6 +128,21 @@ const calculateRewards = function (card, grocery, transportation, recurring, res
         finalRewards = rewards;
     }
 
+    else if (card.longName === "RBC ION+ Visa Card") {
+        let points = card.welcomePoints;
+        if ( months >= 3 && ((grocery + restaurantEntertainment + recurring + transportation + other) * 3) > 500){
+            points += 3500;
+        }
+        for (let i = 1; i < months; i++){
+            points += grocery * card.groceryPoints;
+            points += restaurantEntertainment * card.restaurantPoints;
+            points += transportation * card.transportationPoints;
+            points += other * card.otherPoints;
+        }
+
+        finalRewards = points * card.averagePointValue;
+    }
+
     return finalRewards;
 
 
