@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import CostSliders from './CostSliders';
-import CardSelect from "./CardSelect";
-import CardChart from "./CardChart";
-import data from "./utils/Data.json";
+import CostSliders from './Slider/Slider';
+import CardSelect from "./CardSelect/CardSelect";
+import CardChart from "./Chart/Chart";
+import data from "./utils/data.json";
 
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
@@ -13,7 +13,6 @@ import Joyride, {STATUS} from 'react-joyride';
 
 
 const Home = () => {
-
     const tourState = {
         steps: [
             {
@@ -127,22 +126,18 @@ const Home = () => {
                 }}
                 callback={handleJoyrideCallback}
             />
-            <Container fluid className={"d-grid gap-3"}>
-                <Row className="justify-content-center">
-                    <Col xs={12} md={6} lg={4} xl={3} className="mt-5 d-flex justify-content-center align-items-center">
-                        <div className="select">
+            <Container fluid>
+                <Row className="m-3">
+                    <Col xs={12} md={12} lg={3} xl={3}>
+                        <div className="select m-3">
                             <CardSelect onChange={handleSelectChange}/>
                         </div>
-                    </Col>
-                    <Col xs={15} md={8} lg={6} xl={5} className="m-3">
-                        <div className="slider">
+                        <div className="slider m-3">
                             <CostSliders onChange={handleSliderChange}/>
                         </div>
                     </Col>
-                </Row>
-                <Row className="justify-content-center">
-                    <Col xs={12} md={9} lg={9} xl={9}>
-                        <div className="chart">
+                    <Col xs={12} md={12} lg={9} xl={9}>
+                        <div className="chart m-3">
                             <CardChart
                                 cost={cost}
                                 selectedCards={selectedCards}

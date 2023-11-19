@@ -1,5 +1,5 @@
 .selectContainer {
-    padding: 50px;
+    padding: 5%;
     font-family: 'Ubuntu', sans-serif;
     text-align:left ;
     background-color:#ffffff;
@@ -11,7 +11,7 @@
 }
 
 .select{
-    z-index:100;
+
 }
 
 .switch{

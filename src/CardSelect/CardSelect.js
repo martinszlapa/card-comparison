@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import Select from 'react-select'
 import Form from 'react-bootstrap/Form'
-import data from './utils/Data'
-import styles from './select.module.css';
+import data from '../utils/data.json'
+import styles from './CardSelect.module.css';
 import Cookies from 'js-cookie';
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
 
 
 const CardSelect = ({onChange}) => {
@@ -19,9 +18,13 @@ const CardSelect = ({onChange}) => {
     ];
 
     const [selectedCards, setSelectedCards] = useState(initialSelectValue);
-    const [showPointsCards, setShowPointsCards] = useState(Cookies.get('showPointsCards') ? Cookies.get('showPointsCards') : false);
+    const [showPointsCards, setShowPointsCards] = useState(
+        Cookies.get('showPointsCards') === 'true'
+    );
 
-    const [modalShown, setModalShown] = useState(Cookies.get('modalShown') ? Cookies.get('modalShown') : false);
+    const [modalShown, setModalShown] = useState(
+        Cookies.get('modalShown') === 'true'
+    );
 
     const options = data.cards
         .filter((card) => card.points === false || card.points === showPointsCards)
@@ -70,6 +73,7 @@ const CardSelect = ({onChange}) => {
             />
             <Form>
                 <Form.Check
+                    defaultValue={showPointsCards}
                     type="switch"
                     id="points-switch"
                     className={styles.switch}

@@ -1,5 +1,5 @@
 import './App.css';
-import CardList from './CardList';
+import CardList from './CardList/CardList';
 import Home from './Home';
 
 import {Routes, Route, Outlet, Link, BrowserRouter} from "react-router-dom";
@@ -8,12 +8,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+import Contact from "./Contact/Contact";
 
 
 function App() {
 
   return (
-    <div>
+    <div className="AppContainer">
         <Navbar className = {"App-header"} bg="dark" data-bs-theme="dark" expand="lg" fluid>
             <Container expand = "lg">
                 <Navbar.Brand>Credit Card Comparison</Navbar.Brand>
@@ -22,6 +23,7 @@ function App() {
                     <Nav className="me-auto">
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/List">Card List</Nav.Link>
+                        <Nav.Link href="/Contact">Contact</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
@@ -36,6 +38,7 @@ function App() {
                 <Route path="/" element={
                     <Home />
                 } />
+                <Route path="/Contact" element={<Contact />} />
             </Routes>
             </div>
             {/*<Background />*/}

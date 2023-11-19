@@ -1,7 +1,7 @@
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import React, {useState} from 'react'
-import styles from './slider.module.css';
+import styles from './Slider.module.css';
 import Cookies from 'js-cookie';
 import {BsFillBasketFill, BsFillBusFrontFill, BsFillPhoneFill, BsFilm, BsThreeDots} from 'react-icons/bs';
 import Button from "react-bootstrap/Button";
@@ -10,7 +10,7 @@ const CostSliders = ({onChange}) => {
 
     const costCookieValue = Cookies.get('cost');
 
-    const [sliderMax, setSliderMax] = useState(5000);
+    const [sliderMax, setSliderMax] = useState(1500);
 
     const initialCostValue = costCookieValue ? JSON.parse(costCookieValue) : {
         grocery: 800,

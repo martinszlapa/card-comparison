@@ -6,6 +6,8 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #b0bde5;
+
 }
 
 code {

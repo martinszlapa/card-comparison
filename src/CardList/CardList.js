@@ -6,9 +6,9 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 
-import data from './utils/Data.json';
-import mapping from './utils/FieldMapping.json';
-import styles from './list.module.css';
+import data from '../utils/data.json';
+import mapping from '../utils/FieldMapping.json';
+import styles from './CardList.module.css';
 
 
 const CardList = () => {

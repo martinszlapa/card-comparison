@@ -1,15 +1,15 @@
-import data from './utils/Data';
+import data from '../utils/data.json';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { useState, useEffect } from 'react';
 import 'chart.js/auto';
-import styles from './chart.module.css';
-import calculateRewards from "./utils/CalculateRewards";
+import styles from './Chart.module.css';
+import calculateRewards from "../utils/calculateRewards";
 
 
 
 
-const CardChart = ({ cost, selectedCards}) => {
+const Chart = ({ cost, selectedCards}) => {
 
     const rgbaColours = [
 
@@ -107,8 +107,8 @@ const CardChart = ({ cost, selectedCards}) => {
                     },
                     y: {
                         title: {
-                            display: true,
-                            text: 'Accumulated Cashback (CAD)',
+                            display: false,
+                            text: 'Total Rewards',
                             font: {
                                 size: 20
                             }
@@ -122,7 +122,7 @@ const CardChart = ({ cost, selectedCards}) => {
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Accumulated Rewards',
+                        text: 'Total Rewards ($)',
                         font: {
                             size: 20
                         }
@@ -149,4 +149,4 @@ const CardChart = ({ cost, selectedCards}) => {
 
 }
 
-export default CardChart
+export default Chart
