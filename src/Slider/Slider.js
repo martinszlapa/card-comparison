@@ -56,7 +56,7 @@ const CostSliders = ({onChange}) => {
             <label> <BsFillBasketFill/> Grocery: {grocerySliderValue} $ / month</label>
             <Slider
                 value={grocerySliderValue}
-                className={styles.slider}
+                className={styles.sliderTarget}
                 min={0}
                 max={sliderMax}
                 onChange={handleGrocerySliderChange}
@@ -65,7 +65,7 @@ const CostSliders = ({onChange}) => {
             <label> <BsFillBusFrontFill/> Transportation: {transportationSliderValue} $ / month</label>
             <Slider
                 value={transportationSliderValue}
-                className={styles.slider}
+                className={styles.sliderTarget}
                 min={0}
                 max={sliderMax}
                 ariaValueTextFormatterForHandle={(value) => value.toString()}
@@ -74,7 +74,7 @@ const CostSliders = ({onChange}) => {
             <label> <BsFillPhoneFill/> Recurring: {recurringSliderValue} $ / month</label>
             <Slider
                 value={recurringSliderValue}
-                className={styles.slider}
+                className={styles.sliderTarget}
                 min={0}
                 max={sliderMax}
                 onChange={handleRecurringSliderChange}
@@ -82,7 +82,7 @@ const CostSliders = ({onChange}) => {
             <label> <BsFilm/> Restaurant/Entertainment: {restaurantEntertainmentSliderValue} $ / month</label>
             <Slider
                 value={restaurantEntertainmentSliderValue}
-                className={styles.slider}
+                className={styles.sliderTarget}
                 min={0}
                 max={sliderMax}
                 onChange={handleRestaurantEntertainmentSliderChange}
@@ -90,7 +90,7 @@ const CostSliders = ({onChange}) => {
             <label> <BsThreeDots/> Other: {otherSliderValue} $ / month</label>
             <Slider
                 value={otherSliderValue}
-                className={styles.slider}
+                className={styles.sliderTarget}
                 min={0}
                 max={sliderMax}
                 onChange={handleOtherSliderChange}

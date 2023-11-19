@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import CostSliders from './Slider/Slider';
 import CardSelect from "./CardSelect/CardSelect";
-import CardChart from "./Chart/Chart";
+import Chart from "./Chart/Chart";
 import data from "./utils/data.json";
 
 import Container from "react-bootstrap/Container";
@@ -16,19 +16,19 @@ const Home = () => {
     const tourState = {
         steps: [
             {
-                target: '.select',
+                target: '.selectTarget',
                 content: <strong>Select credit cards to be compared here. You can select as many as you'd like.
                 Toggle the slider to choose whether cash-equivalent points cards are shown, or if you'd only like to see
                 cards that give direct cashback rewards.</strong>,
                 placement: 'bottom',
             },
             {
-                target: '.slider',
+                target: '.sliderTarget',
                 content: <strong>Enter your monthly spending here. Different cards have different benefits based on how you spend your money, so try a variety of combinations to see what fits your needs.</strong>,
                 placement: 'bottom',
             },
             {
-                target: '.chart',
+                target: '.chartTarget',
                 content: <strong>The rewards you will earn each month from each credit card are shown here. Try hovering over the line to see the exact value for a particular card!</strong>,
                 placement: 'bottom',
             }
@@ -129,16 +129,16 @@ const Home = () => {
             <Container fluid>
                 <Row className="m-3">
                     <Col xs={12} md={12} lg={3} xl={3}>
-                        <div className="select m-3">
+                        <div className="selectTarget m-3">
                             <CardSelect onChange={handleSelectChange}/>
                         </div>
-                        <div className="slider m-3">
+                        <div className="sliderTarget m-3">
                             <CostSliders onChange={handleSliderChange}/>
                         </div>
                     </Col>
-                    <Col xs={12} md={12} lg={9} xl={9}>
-                        <div className="chart m-3">
-                            <CardChart
+                    <Col xs={12} md={12} lg={9} xl={9} className="p-4">
+                        <div className="chartTarget h-100">
+                            <Chart
                                 cost={cost}
                                 selectedCards={selectedCards}
                             />

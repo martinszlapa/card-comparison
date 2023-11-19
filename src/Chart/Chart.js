@@ -1,6 +1,6 @@
 import data from '../utils/data.json';
 import React from 'react';
-import { Line } from 'react-chartjs-2';
+import { Line, Colors } from 'react-chartjs-2';
 import { useState, useEffect } from 'react';
 import 'chart.js/auto';
 import styles from './Chart.module.css';
@@ -86,12 +86,14 @@ const Chart = ({ cost, selectedCards}) => {
     }, [cost, selectedCards]);
 
 
+    function handleResize(width, height){
 
+    }
 
     return (
-    <div className={styles.container}>
         <Line data={chartData}
             options={{
+                maintainAspectRatio: true,
                 scales: {
                     x: {
                         title: {
@@ -120,6 +122,10 @@ const Chart = ({ cost, selectedCards}) => {
                     },
                 },
                 plugins: {
+                    colors:{
+                        enabled: true,
+                        forceOverride: true
+                    },
                     title: {
                         display: true,
                         text: 'Total Rewards ($)',
@@ -144,7 +150,6 @@ const Chart = ({ cost, selectedCards}) => {
             }
               className={styles.chart}
         />
-    </div>
     );
 
 }
