@@ -5,7 +5,7 @@ import styles from './Slider.module.css';
 import Cookies from 'js-cookie';
 import {BsFillBasketFill, BsFillBusFrontFill, BsFillPhoneFill, BsFilm, BsThreeDots} from 'react-icons/bs';
 import Button from "react-bootstrap/Button";
-
+import './ReactSliderOverride.css';
 const CostSliders = ({onChange}) => {
 
     const costCookieValue = Cookies.get('cost');

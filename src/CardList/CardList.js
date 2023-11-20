@@ -35,42 +35,47 @@ const CardList = () => {
                 />
             </Form.Group>
             <Container>
-                {data.cards
-                    .filter((card) => {
-                        return card.longName.toLowerCase().includes(search.toLowerCase())
-                    })
-                    .map((card) => (
-                        <Row>
-                            <Col xs={12} md={6} lg={6} xl={6} key={card.longName} className={styles.listEntry}>
-                                <img src={card.image} alt={card.longName} className={styles.cardImage}/>
-                                <h2>{card.longName}</h2>
-                                {card.visibleKeys.map((key) => (
-                                    <p key={key}><strong>{mapping[key]}:</strong> {card[key]}</p>
-                                ))
-                                }
-                                <Button className={styles.modalButton} variant={"primary"} onClick={() => handleShow(card)}>
-                                    Card Details
-                                </Button>
+                <Row>
+                    {data.cards
+                        .filter((card) => {
+                            return card.longName.toLowerCase().includes(search.toLowerCase())
+                        })
+                        .map((card) => (
+
+                            <Col xs={12} md={12} lg={6} xl={6} key={card.longName} >
+                                <div className={styles.listEntry}>
+                                    <img src={card.image} alt={card.longName} className={styles.cardImage}/>
+                                    <h2>{card.longName}</h2>
+                                    {card.visibleKeys.map((key) => (
+                                        <p key={key}><strong>{mapping[key]}:</strong> {card[key]}</p>
+                                    ))
+                                    }
+                                    <Button className={styles.modalButton} variant={"primary"}
+                                            onClick={() => handleShow(card)}>
+                                        Card Details
+                                    </Button>
+                                </div>
                             </Col>
-                        </Row>
-                    ))
-                }
+
+                        ))
+                    }
+                </Row>
             </Container>
 
-                {selectedCard != null && (<Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Card details for {selectedCard.longName}</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <div>
-                            <img src={selectedCard.image} alt={selectedCard.longName} className={styles.cardImage}/>
-                            {selectedCard.modalKeys.map((key) => (
-                                <p key={key}><strong>{mapping[key]}:</strong> {selectedCard[key]}</p>
-                            ))
-                            }
-                        </div>
-                    </Modal.Body>
-                </Modal>)}
+            {selectedCard != null && (<Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Card details for {selectedCard.longName}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <div>
+                        <img src={selectedCard.image} alt={selectedCard.longName} className={styles.cardImage}/>
+                        {selectedCard.modalKeys.map((key) => (
+                            <p key={key}><strong>{mapping[key]}:</strong> {selectedCard[key]}</p>
+                        ))
+                        }
+                    </div>
+                </Modal.Body>
+            </Modal>)}
         </div>
     )
 }
