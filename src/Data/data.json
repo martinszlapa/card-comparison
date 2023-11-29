@@ -12,7 +12,7 @@
             "otherCashback": 0.005,
             "groceryRewardCap": 500,
             "recurringRewardCap": 500,
-            "image": "https://www.bmo.com/dist/images/personal/credit-cards/bmo-cashback-mastercard.png",
+            "image": "1.png",
             "visibleKeys" : [
                 "longName", "institution", "type"
             ],
@@ -37,7 +37,7 @@
             "otherCashback": 0.005,
             "overallSpendingCap": 80000,
             "eligibleSpendingCap": 20000,
-            "image": "https://www.cibc.com/content/dam/global-assets/card-art/credit-cards/dividend-cards/cibc-dividend-visa-card-for-students/cibc-dividend-visa-card-for-students-en.png/_jcr_content/renditions/cq5dam.thumbnail.319.319.png",
+            "image": "2.avif",
             "visibleKeys" : [
                 "longName", "institution", "type"
             ],
@@ -62,7 +62,7 @@
             "rewardCapYearly": 120,
             "grocerySpendingCapYearly": 6000,
             "otherSpendingCapYearly": 6000,
-            "image": "https://www.rbcroyalbank.com/credit-cards/app/assets/cards/mc1_cashbackmc_en_sm.png",
+            "image": "3.png",
             "visibleKeys" : [
                 "longName", "institution", "type"
             ],
@@ -95,7 +95,7 @@
                 "groceryCashback", "recurringCashback", "otherCashback", "transportationCashback",
                 "annualCap4Percent", "annualCap2Percent"
             ],
-            "image": "https://www.scotiabank.com/content/dam/scotiabank/canada/en/card-arts/Momentum_Visa_Infinite_ENG.png",
+            "image": "4.avif",
             "points": false
         },
         {
@@ -110,7 +110,7 @@
             "insuranceCoverage": "Assurant®",
             "applePay": "Yes",
             "zeroLiability": "Yes",
-            "image": "https://www.hsbc.ca/content/dam/hsbc/ca/banking/credit-cards/plus-rewards_en_product_page_300x474.png",
+            "image": "5.png",
 
             "visibleKeys": [
                 "longName", "institution", "type"
@@ -138,7 +138,7 @@
             "otherPoints": 1,
             "averagePointValue": "0.01",
             "welcomePoints": 3500,
-            "image": "https://www.rbcroyalbank.com/credit-cards/app/assets/cards/rbc-avion-rewards-ion-plus_en_sm.png",
+            "image": "6.png",
             "visibleKeys": [
                 "longName", "institution", "type"
             ],
@@ -168,7 +168,7 @@
             "annualPointsCap": 5000,
             "otherPoints": 1,
             "pointsPerDollar": 200,
-            "image": "https://www.td.com/content/dam/tdct/images/personal-banking/browse-all/RewardsTravel_VISA_MKT_RGB_L_EN_548x344.jpg",
+            "image": "7.jpg",
             "visibleKeys": [
                 "longName", "institution", "type"
             ],

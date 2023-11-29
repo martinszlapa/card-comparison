@@ -1,10 +1,10 @@
-import data from '../utils/data.json';
+import data from '.././Data/data.json';
 import React from 'react';
 import { Line, Colors } from 'react-chartjs-2';
 import { useState, useEffect } from 'react';
 import 'chart.js/auto';
 import styles from './Chart.module.css';
-import calculateRewards from "../utils/calculateRewards";
+import calculateRewards from ".././Data/calculateRewards";
 
 
 

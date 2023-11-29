@@ -6,8 +6,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 
-import data from '../utils/data.json';
-import mapping from '../utils/FieldMapping.json';
+import data from '.././Data/data.json';
+import mapping from '.././Data/FieldMapping.json';
 import styles from './CardList.module.css';
 
 
@@ -44,7 +44,7 @@ const CardList = () => {
 
                             <Col xs={12} md={12} lg={6} xl={6} key={card.longName} >
                                 <div className={styles.listEntry}>
-                                    <img src={card.image} alt={card.longName} className={styles.cardImage}/>
+                                    <img src={"/CardImages/"+card.image} alt={card.longName} className={styles.cardImage}/>
                                     <h2>{card.longName}</h2>
                                     {card.visibleKeys.map((key) => (
                                         <p key={key}><strong>{mapping[key]}:</strong> {card[key]}</p>

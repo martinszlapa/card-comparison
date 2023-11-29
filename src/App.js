@@ -17,7 +17,7 @@ function App() {
     <div className="AppContainer">
         <Navbar className = {"App-header"} bg="dark" data-bs-theme="dark" expand="lg" fluid>
             <Container expand = "lg">
-                <Navbar.Brand>Credit Card Comparison</Navbar.Brand>
+                <Navbar.Brand>Cashback Card Comparison</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">

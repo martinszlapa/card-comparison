@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import CostSliders from './Slider/Slider';
 import CardSelect from "./CardSelect/CardSelect";
 import Chart from "./Chart/Chart";
-import data from "./utils/data.json";
+import data from "././Data/data.json";
 
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
@@ -35,7 +35,7 @@ const Home = () => {
         ]
     }
 
-    const [showTour, setShowTour] = useState(Cookies.get('tourShown') ? false : true);
+    const [showTour, setShowTour] = useState(!Cookies.get('tourShown'));
     const costCookieValue = Cookies.get('cost')
 
     const initialCostValue =

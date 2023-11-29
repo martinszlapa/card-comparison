@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Select from 'react-select'
 import Form from 'react-bootstrap/Form'
-import data from '../utils/data.json'
+import data from '.././Data/data.json'
 import styles from './CardSelect.module.css';
 import Cookies from 'js-cookie';
 import Modal from "react-bootstrap/Modal";
