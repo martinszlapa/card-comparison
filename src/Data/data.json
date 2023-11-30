@@ -37,7 +37,7 @@
             "otherCashback": 0.005,
             "overallSpendingCap": 80000,
             "eligibleSpendingCap": 20000,
-            "image": "2.avif",
+            "image": "2.png",
             "visibleKeys" : [
                 "longName", "institution", "type"
             ],
@@ -95,7 +95,7 @@
                 "groceryCashback", "recurringCashback", "otherCashback", "transportationCashback",
                 "annualCap4Percent", "annualCap2Percent"
             ],
-            "image": "4.avif",
+            "image": "4.png",
             "points": false
         },
         {
