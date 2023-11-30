@@ -40,20 +40,26 @@ const Home = () => {
 
     const initialCostValue =
         costCookieValue ? JSON.parse(costCookieValue) : {
-            grocery: 0,
-            transportation: 0,
-            recurring: 0,
-            restaurantEntertainment: 0,
-            other: 0
+            grocery: 800,
+            transportation: 150,
+            recurring: 200,
+            restaurantEntertainment: 400,
+            other: 900
         }
 
     const selectCookieValue = Cookies.get('select');
     const initialSelectValue = selectCookieValue ? JSON.parse(selectCookieValue).map(
-        (card) => data.cards.find((c) => c.longName === card.label)) : [];
+        (card) => data.cards.find((c) => c.longName === card.label)) :
+        ['BMO Student Cashback Mastercard', 'RBC Cash Back Mastercard', 'CIBC Dividend Visa Card for Students'].map(
+            (card) => data.cards.find((c) => c.longName === card)
+        )
 
     const [cost, setCost] = useState(initialCostValue);
 
     const [selectedCards, setSelectedCards] = useState(initialSelectValue);
+
+    console.log('Cost: ', cost);
+    console.log('Selected Cards: ', selectedCards);
 
     function startTour() {
         setShowTour(true);
@@ -114,18 +120,6 @@ const Home = () => {
 
     return (
         <div>
-            <Joyride
-                steps={tourState.steps}
-                run={showTour}
-                continuous={true}
-                scrollToFirstStep={true}
-                showProgress={true}
-                showSkipButton={true}
-                styles={{
-                    options: {}
-                }}
-                callback={handleJoyrideCallback}
-            />
             <Container fluid>
                 <Row className="m-3">
                     <Col xs={12} md={12} lg={3} xl={3}>
@@ -148,6 +142,18 @@ const Home = () => {
 
 
             </Container>
+            <Joyride
+                steps={tourState.steps}
+                run={showTour}
+                continuous={true}
+                scrollToFirstStep={true}
+                showProgress={true}
+                showSkipButton={true}
+                styles={{
+                    options: {}
+                }}
+                callback={handleJoyrideCallback}
+            />
         </div>
     )
 }
