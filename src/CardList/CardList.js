@@ -25,6 +25,10 @@ const CardList = () => {
         setSelectedCard(card)
     };
 
+    function isDecimal(n) {
+        return Number(n) === n && n % 1 !== 0;
+    }
+
     return (
         <div className={styles.list}>
             <Form.Group className={styles.searchBar}>
@@ -45,7 +49,7 @@ const CardList = () => {
                             <Col xs={12} md={12} lg={6} xl={6} key={card.longName} >
                                 <div className={styles.listEntry}>
                                     <img src={"/CardImages/"+card.image} alt={card.longName} className={styles.cardImage}/>
-                                    <h2>{card.longName}</h2>
+                                    <h3>{card.longName}</h3>
                                     {card.visibleKeys.map((key) => (
                                         <p key={key}><strong>{mapping[key]}:</strong> {card[key]}</p>
                                     ))
@@ -67,10 +71,12 @@ const CardList = () => {
                     <Modal.Title>Card details for {selectedCard.longName}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div>
-                        <img src={selectedCard.image} alt={selectedCard.longName} className={styles.cardImage}/>
+                    <div className={styles.modalBody}>
+                        <img src={"/CardImages/"+selectedCard.image} alt={selectedCard.longName} className={styles.cardImage}/>
                         {selectedCard.modalKeys.map((key) => (
-                            <p key={key}><strong>{mapping[key]}:</strong> {selectedCard[key]}</p>
+                            <p key={key}><strong>{mapping[key]}: </strong>
+                                {isDecimal(selectedCard[key])? String((selectedCard[key]*100).toFixed(2)) + '%' : selectedCard[key]}
+                            </p>
                         ))
                         }
                     </div>

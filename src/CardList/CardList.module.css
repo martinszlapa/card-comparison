@@ -20,3 +20,9 @@
 .modalButton{
     width: 20%;
 }
+
+.modalBody{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
