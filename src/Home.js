@@ -11,6 +11,7 @@ import Cookies from 'js-cookie';
 
 import Joyride, {STATUS} from 'react-joyride';
 
+import styles from './Home.module.css';
 
 const Home = () => {
     const tourState = {
@@ -119,7 +120,7 @@ const Home = () => {
     }
 
     return (
-        <div>
+        <div className={styles.homeContainer}>
             <Container fluid>
                 <Row className="m-3">
                     <Col xs={12} md={12} lg={3} xl={3}>
