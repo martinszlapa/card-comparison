@@ -1,7 +1,7 @@
 {
   "longName": "Name",
   "institution": "Issuer",
-  "type": "Type",
+  "type": "Card Type",
   "annualFee": "Annual Fee",
   "interestRate": "Card Interest Rate",
   "groceryCashback": "Grocery Cashback",
@@ -24,11 +24,15 @@
   "applePay": "Apple Pay Capable?",
   "zeroLiability": "Zero liability",
   "pointsDollarsRatio": "Points to dollars ratio",
-  "groceryPoints":  "Grocery Points",
-  "restaurantPoints":  "Restaurant Points",
-  "transportationPoints":  "Transportation Points",
-  "otherPoints":  "Other Points",
-  "recurringPoints":  "Recurring Purchase Points",
+  "groceryPoints": "Grocery points per dollar",
+  "restaurantPoints": "Restaurant points per dollar",
+  "transportationPoints": "Transportation points per dollar",
+  "otherPoints": "Other points per dollar",
+  "recurringPoints": "Recurring purchase points per dollar",
   "pointsPerDollar": "Points equal to 1 dollar",
-  "averagePointValue": "Average point value"
+  "averagePointValue": "Average point value",
+  "welcomePoints": "Welcome point bonus",
+  "overallSpendingCap":  "Overall rewards-eligible yearly spending cap",
+  "eligibleSpendingCap": "Specific rewards-eligible (i.e. categorized) yearly spending cap",
+  "otherSpendingCapYearly": "Other spending yearly rewards cap"
 }

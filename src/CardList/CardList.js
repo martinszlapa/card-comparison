@@ -31,14 +31,17 @@ const CardList = () => {
 
     return (
         <div className={styles.list}>
-            <Form.Group className={styles.searchBar}>
-                <Form.Control
-                    type="text"
-                    placeholder="Search... "
-                    onChange={(e) => setSearch(e.target.value)}
-                />
-            </Form.Group>
+
             <Container>
+                <Row>
+                    <Form.Group className={styles.searchBar}>
+                        <Form.Control
+                            type="text"
+                            placeholder="Search... "
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                    </Form.Group>
+                </Row>
                 <Row>
                     {data.cards
                         .filter((card) => {
@@ -66,7 +69,7 @@ const CardList = () => {
                 </Row>
             </Container>
 
-            {selectedCard != null && (<Modal show={show} onHide={handleClose}>
+            {selectedCard != null && (<Modal show={show} onHide={handleClose} dialogClassName={styles.largeModalContent}>
                 <Modal.Header closeButton>
                     <Modal.Title>Card details for {selectedCard.longName}</Modal.Title>
                 </Modal.Header>

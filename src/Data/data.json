@@ -17,10 +17,10 @@
                 "longName", "institution", "type"
             ],
             "modalKeys": [
-                "interestRate",
+                "institution", "type", "interestRate",
                 "annualFee",
                 "groceryCashback", "recurringCashback", "otherCashback", "transportationCashback",
-                "groceryRewardCap", "recurringRewardCap", "transportationRewardCap"
+                "groceryRewardCap", "recurringRewardCap"
             ],
             "points": false
         },
@@ -42,10 +42,10 @@
                 "longName", "institution", "type"
             ],
             "modalKeys": [
-                "longName", "institution", "type", "interestRate",
+                "institution", "type", "interestRate",
                 "annualFee",
                 "groceryCashback", "recurringCashback", "otherCashback", "transportationCashback",
-                "rewardCapYearly", "overallCapYearly"
+                "overallSpendingCap", "eligibleSpendingCap"
             ],
             "points": false
         },
@@ -69,7 +69,7 @@
             "modalKeys": [
                 "institution", "type", "interestRate",
                 "annualFee",
-                "rewardCapYearly", "grocerySpendingCapYearly", "groceryRewardCap", "nonGroceryCapYearly", "nonGroceryEarningsCap"
+                "rewardCapYearly", "grocerySpendingCapYearly", "otherSpendingCapYearly"
             ],
             "points": false
 
@@ -116,12 +116,9 @@
                 "longName", "institution", "type"
             ],
             "modalKeys": [
-                "interestRate",
+                "institution", "type", "interestRate",
                 "annualFee",
-                "insuranceCoverage",
-                "restaurantEntertainmentCashback",
-                "applePay",
-                "zeroLiability"
+                "restaurantEntertainmentCashback", "otherCashback"
             ],
             "points": true
         },
@@ -143,15 +140,13 @@
                 "longName", "institution", "type"
             ],
             "modalKeys": [
-                "interestRate",
+                "institution", "type", "interestRate",
                 "annualFee",
-                "interestRate",
                 "welcomePoints",
                 "groceryPoints",
                 "restaurantPoints",
                 "transportationPoints",
-                "otherPoints",
-                "pointValue"
+                "otherPoints"
             ],
             "points": true
         },
@@ -173,7 +168,7 @@
                 "longName", "institution", "type"
             ],
             "modalKeys": [
-                "interestRate",
+                "institution", "type", "interestRate",
                 "annualFee",
                 "groceryPoints",
                 "recurringPoints",
