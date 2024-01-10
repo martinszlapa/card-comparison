@@ -17,11 +17,11 @@ function App() {
     <div className="AppContainer">
         <Navbar className = {"App-header"} bg="dark" data-bs-theme="dark" expand="lg" fluid>
             <Container expand = "lg">
-                <Navbar.Brand>Cashback Card Comparison</Navbar.Brand>
+                <Navbar.Brand>Where's my money?</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/">Compare Cards</Nav.Link>
                         <Nav.Link href="/List">Card List</Nav.Link>
                         <Nav.Link href="/Contact">Contact</Nav.Link>
                     </Nav>
